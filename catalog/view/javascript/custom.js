@@ -219,7 +219,7 @@ $closeThanksBtn.click(function () {
     $sendForm.removeClass('hidden');
 });
 
-function buy() {
+// function buy() {
     /*var $buyButton = $('.js-btn-buy');
     $buyButton.click(function () {
         var $cart = $('.cart-modal'),
@@ -256,7 +256,7 @@ function buy() {
 
 
     })*/
-}
+// }
 
 var getCartAddedNewProduct = function($product_id, callback) {
     $.post('/?route=checkout/checkout/single', {product_id: $product_id}, function(response) {
