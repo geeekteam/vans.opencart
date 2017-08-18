@@ -1,0 +1,2608 @@
+2017-08-08 12:19:19 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: fondy_payment
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: public function index() {
+LINE: 11
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+LINE: 26
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 210
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+2017-08-08 12:23:36 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: fondy_payment
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: public function index() {
+LINE: 11
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+LINE: 26
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 210
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+2017-08-08 12:25:10 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: fondy_payment
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: public function index() {
+LINE: 11
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+LINE: 26
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 210
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+2017-08-08 12:25:16 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: fondy_payment
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: public function index() {
+LINE: 11
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+LINE: 26
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 210
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: NewsBlog - create unlimited categories with articles
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 72
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 52
+CODE: $url[0] != 'information_id'
+LINE: 56
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 79
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 97
+CODE: } elseif ($key == 'path') {
+LINE: 123
+
+FILE: catalog/controller/startup/seo_pro.php
+CODE: if ($url[0] == 'category_id') {
+LINE: 74
+CODE: if (isset($this->request->get['product_id'])) {
+LINE: 99
+CODE: case 'product/product':
+LINE: 164
+CODE: case 'product_id':
+LINE: 229
+CODE: private function getPathByProduct($product_id) {
+LINE: 357
+
+FILE: catalog/controller/information/sitemap.php
+CODE: $this->load->model('catalog/information');
+LINE: 118
+
+FILE: catalog/view/theme/default/template/information/sitemap.tpl
+CODE: <li><?php echo $text_information; ?>
+LINE: 69
+
+FILE: catalog/controller/common/header.php
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 184
+----------------------------------------------------------------
+2017-08-08 12:25:51 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: fondy_payment
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: public function index() {
+LINE: 11
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+LINE: 26
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 210
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: NewsBlog - create unlimited categories with articles
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 72
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 52
+CODE: $url[0] != 'information_id'
+LINE: 56
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 79
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 97
+CODE: } elseif ($key == 'path') {
+LINE: 123
+
+FILE: catalog/controller/startup/seo_pro.php
+CODE: if ($url[0] == 'category_id') {
+LINE: 74
+CODE: if (isset($this->request->get['product_id'])) {
+LINE: 99
+CODE: case 'product/product':
+LINE: 164
+CODE: case 'product_id':
+LINE: 229
+CODE: private function getPathByProduct($product_id) {
+LINE: 357
+
+FILE: catalog/controller/information/sitemap.php
+CODE: $this->load->model('catalog/information');
+LINE: 118
+
+FILE: catalog/view/theme/default/template/information/sitemap.tpl
+CODE: <li><?php echo $text_information; ?>
+LINE: 69
+
+FILE: catalog/controller/common/header.php
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 184
+----------------------------------------------------------------
+2017-08-08 12:33:55 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: fondy_payment
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: public function index() {
+LINE: 11
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+LINE: 26
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 210
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+2017-08-09 12:49:21 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: fondy_payment
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: public function index() {
+LINE: 11
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+LINE: 26
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 210
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+2017-08-09 12:49:31 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: fondy_payment
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: public function index() {
+LINE: 11
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+LINE: 26
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 210
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+2017-08-11 9:03:04 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: fondy_payment
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: public function index() {
+LINE: 11
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+LINE: 26
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 210
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+2017-08-11 9:03:57 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: fondy_payment
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: public function index() {
+LINE: 11
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+LINE: 26
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 210
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+2017-08-11 10:04:28 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: fondy_payment
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: public function index() {
+LINE: 11
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+LINE: 26
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 210
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+2017-08-14 11:57:52 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: fondy_payment
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: public function index() {
+LINE: 11
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+LINE: 26
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 210
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: NewsBlog - create unlimited categories with articles
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 72
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 52
+CODE: $url[0] != 'information_id'
+LINE: 56
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 79
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 97
+CODE: } elseif ($key == 'path') {
+LINE: 123
+
+FILE: catalog/controller/startup/seo_pro.php
+CODE: if ($url[0] == 'category_id') {
+LINE: 74
+CODE: if (isset($this->request->get['product_id'])) {
+LINE: 99
+CODE: case 'product/product':
+LINE: 164
+CODE: case 'product_id':
+LINE: 229
+CODE: private function getPathByProduct($product_id) {
+LINE: 357
+
+FILE: catalog/controller/information/sitemap.php
+CODE: $this->load->model('catalog/information');
+LINE: 118
+
+FILE: catalog/view/theme/default/template/information/sitemap.tpl
+CODE: <li><?php echo $text_information; ?>
+LINE: 69
+
+FILE: catalog/controller/common/header.php
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 184
+----------------------------------------------------------------
+2017-08-14 13:50:37 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: fondy_payment
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: public function index() {
+LINE: 11
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+LINE: 26
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 210
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: NewsBlog - create unlimited categories with articles
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 72
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 52
+CODE: $url[0] != 'information_id'
+LINE: 56
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 79
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 97
+CODE: } elseif ($key == 'path') {
+LINE: 123
+
+FILE: catalog/controller/startup/seo_pro.php
+CODE: if ($url[0] == 'category_id') {
+LINE: 74
+CODE: if (isset($this->request->get['product_id'])) {
+LINE: 99
+CODE: case 'product/product':
+LINE: 164
+CODE: case 'product_id':
+LINE: 229
+CODE: private function getPathByProduct($product_id) {
+LINE: 357
+
+FILE: catalog/controller/information/sitemap.php
+CODE: $this->load->model('catalog/information');
+LINE: 118
+
+FILE: catalog/view/theme/default/template/information/sitemap.tpl
+CODE: <li><?php echo $text_information; ?>
+LINE: 69
+
+FILE: catalog/controller/common/header.php
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 184
+----------------------------------------------------------------
+2017-08-14 13:50:43 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: fondy_payment
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: public function index() {
+LINE: 11
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+LINE: 26
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 210
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: NewsBlog - create unlimited categories with articles
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 72
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 52
+CODE: $url[0] != 'information_id'
+LINE: 56
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 79
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 97
+CODE: } elseif ($key == 'path') {
+LINE: 123
+
+FILE: catalog/controller/startup/seo_pro.php
+CODE: if ($url[0] == 'category_id') {
+LINE: 74
+CODE: if (isset($this->request->get['product_id'])) {
+LINE: 99
+CODE: case 'product/product':
+LINE: 164
+CODE: case 'product_id':
+LINE: 229
+CODE: private function getPathByProduct($product_id) {
+LINE: 357
+
+FILE: catalog/controller/information/sitemap.php
+CODE: $this->load->model('catalog/information');
+LINE: 118
+
+FILE: catalog/view/theme/default/template/information/sitemap.tpl
+CODE: <li><?php echo $text_information; ?>
+LINE: 69
+
+FILE: catalog/controller/common/header.php
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 184
+----------------------------------------------------------------
+2017-08-14 13:53:48 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: fondy_payment
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: public function index() {
+LINE: 11
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+LINE: 26
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 210
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: NewsBlog - create unlimited categories with articles
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 72
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 52
+CODE: $url[0] != 'information_id'
+LINE: 56
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 79
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 97
+CODE: } elseif ($key == 'path') {
+LINE: 123
+
+FILE: catalog/controller/startup/seo_pro.php
+CODE: if ($url[0] == 'category_id') {
+LINE: 74
+CODE: if (isset($this->request->get['product_id'])) {
+LINE: 99
+CODE: case 'product/product':
+LINE: 164
+CODE: case 'product_id':
+LINE: 229
+CODE: private function getPathByProduct($product_id) {
+LINE: 357
+
+FILE: catalog/controller/information/sitemap.php
+CODE: $this->load->model('catalog/information');
+LINE: 118
+
+FILE: catalog/view/theme/default/template/information/sitemap.tpl
+CODE: <li><?php echo $text_information; ?>
+LINE: 69
+
+FILE: catalog/controller/common/header.php
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 184
+----------------------------------------------------------------
+2017-08-14 13:55:30 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: fondy_payment
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: public function index() {
+LINE: 11
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+LINE: 26
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 210
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: NewsBlog - create unlimited categories with articles
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 72
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 52
+CODE: $url[0] != 'information_id'
+LINE: 56
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 79
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 97
+CODE: } elseif ($key == 'path') {
+LINE: 123
+
+FILE: catalog/controller/startup/seo_pro.php
+CODE: if ($url[0] == 'category_id') {
+LINE: 74
+CODE: if (isset($this->request->get['product_id'])) {
+LINE: 99
+CODE: case 'product/product':
+LINE: 164
+CODE: case 'product_id':
+LINE: 229
+CODE: private function getPathByProduct($product_id) {
+LINE: 357
+
+FILE: catalog/controller/information/sitemap.php
+CODE: $this->load->model('catalog/information');
+LINE: 118
+
+FILE: catalog/view/theme/default/template/information/sitemap.tpl
+CODE: <li><?php echo $text_information; ?>
+LINE: 69
+
+FILE: catalog/controller/common/header.php
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 184
+----------------------------------------------------------------
+MOD: Rufus Visited Products
+
+FILE: catalog/controller/product/product.php
+CODE: public function index() {
+LINE: 12
+----------------------------------------------------------------
+2017-08-14 13:56:50 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: fondy_payment
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: public function index() {
+LINE: 11
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+LINE: 26
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 210
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: NewsBlog - create unlimited categories with articles
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 72
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 52
+CODE: $url[0] != 'information_id'
+LINE: 56
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 79
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 97
+CODE: } elseif ($key == 'path') {
+LINE: 123
+
+FILE: catalog/controller/startup/seo_pro.php
+CODE: if ($url[0] == 'category_id') {
+LINE: 74
+CODE: if (isset($this->request->get['product_id'])) {
+LINE: 99
+CODE: case 'product/product':
+LINE: 164
+CODE: case 'product_id':
+LINE: 229
+CODE: private function getPathByProduct($product_id) {
+LINE: 357
+
+FILE: catalog/controller/information/sitemap.php
+CODE: $this->load->model('catalog/information');
+LINE: 118
+
+FILE: catalog/view/theme/default/template/information/sitemap.tpl
+CODE: <li><?php echo $text_information; ?>
+LINE: 69
+
+FILE: catalog/controller/common/header.php
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 184
+----------------------------------------------------------------
+MOD: Rufus Visited Products
+
+FILE: catalog/controller/product/product.php
+CODE: public function index() {
+LINE: 12
+----------------------------------------------------------------
+2017-08-14 14:01:39 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: fondy_payment
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: public function index() {
+LINE: 11
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+LINE: 26
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 210
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: NewsBlog - create unlimited categories with articles
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 72
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 52
+CODE: $url[0] != 'information_id'
+LINE: 56
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 79
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 97
+CODE: } elseif ($key == 'path') {
+LINE: 123
+
+FILE: catalog/controller/startup/seo_pro.php
+CODE: if ($url[0] == 'category_id') {
+LINE: 74
+CODE: if (isset($this->request->get['product_id'])) {
+LINE: 99
+CODE: case 'product/product':
+LINE: 164
+CODE: case 'product_id':
+LINE: 229
+CODE: private function getPathByProduct($product_id) {
+LINE: 357
+
+FILE: catalog/controller/information/sitemap.php
+CODE: $this->load->model('catalog/information');
+LINE: 118
+
+FILE: catalog/view/theme/default/template/information/sitemap.tpl
+CODE: <li><?php echo $text_information; ?>
+LINE: 69
+
+FILE: catalog/controller/common/header.php
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 184
+----------------------------------------------------------------
+2017-08-14 14:06:22 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: fondy_payment
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: public function index() {
+LINE: 11
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+LINE: 26
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 210
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: NewsBlog - create unlimited categories with articles
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 72
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 52
+CODE: $url[0] != 'information_id'
+LINE: 56
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 79
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 97
+CODE: } elseif ($key == 'path') {
+LINE: 123
+
+FILE: catalog/controller/startup/seo_pro.php
+CODE: if ($url[0] == 'category_id') {
+LINE: 74
+CODE: if (isset($this->request->get['product_id'])) {
+LINE: 99
+CODE: case 'product/product':
+LINE: 164
+CODE: case 'product_id':
+LINE: 229
+CODE: private function getPathByProduct($product_id) {
+LINE: 357
+
+FILE: catalog/controller/information/sitemap.php
+CODE: $this->load->model('catalog/information');
+LINE: 118
+
+FILE: catalog/view/theme/default/template/information/sitemap.tpl
+CODE: <li><?php echo $text_information; ?>
+LINE: 69
+
+FILE: catalog/controller/common/header.php
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 184
+----------------------------------------------------------------
+2017-08-16 11:17:24 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: fondy_payment
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: public function index() {
+LINE: 11
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+LINE: 26
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 210
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: NewsBlog - create unlimited categories with articles
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 72
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 52
+CODE: $url[0] != 'information_id'
+LINE: 56
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 79
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 97
+CODE: } elseif ($key == 'path') {
+LINE: 123
+
+FILE: catalog/controller/startup/seo_pro.php
+CODE: if ($url[0] == 'category_id') {
+LINE: 74
+CODE: if (isset($this->request->get['product_id'])) {
+LINE: 99
+CODE: case 'product/product':
+LINE: 164
+CODE: case 'product_id':
+LINE: 229
+CODE: private function getPathByProduct($product_id) {
+LINE: 357
+
+FILE: catalog/controller/information/sitemap.php
+CODE: $this->load->model('catalog/information');
+LINE: 118
+
+FILE: catalog/view/theme/default/template/information/sitemap.tpl
+CODE: <li><?php echo $text_information; ?>
+LINE: 69
+
+FILE: catalog/controller/common/header.php
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 184
+----------------------------------------------------------------
+2017-08-16 11:26:22 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: fondy_payment
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: public function index() {
+LINE: 11
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+LINE: 26
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 210
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: NewsBlog - create unlimited categories with articles
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 72
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 52
+CODE: $url[0] != 'information_id'
+LINE: 56
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 79
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 97
+CODE: } elseif ($key == 'path') {
+LINE: 123
+
+FILE: catalog/controller/startup/seo_pro.php
+CODE: if ($url[0] == 'category_id') {
+LINE: 74
+CODE: if (isset($this->request->get['product_id'])) {
+LINE: 99
+CODE: case 'product/product':
+LINE: 164
+CODE: case 'product_id':
+LINE: 229
+CODE: private function getPathByProduct($product_id) {
+LINE: 357
+
+FILE: catalog/controller/information/sitemap.php
+CODE: $this->load->model('catalog/information');
+LINE: 118
+
+FILE: catalog/view/theme/default/template/information/sitemap.tpl
+CODE: <li><?php echo $text_information; ?>
+LINE: 69
+
+FILE: catalog/controller/common/header.php
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 184
+----------------------------------------------------------------
+2017-08-16 12:36:37 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: fondy_payment
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: public function index() {
+LINE: 11
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+LINE: 26
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 210
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: NewsBlog - create unlimited categories with articles
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 72
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 52
+CODE: $url[0] != 'information_id'
+LINE: 56
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 79
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 97
+CODE: } elseif ($key == 'path') {
+LINE: 123
+
+FILE: catalog/controller/startup/seo_pro.php
+CODE: if ($url[0] == 'category_id') {
+LINE: 74
+CODE: if (isset($this->request->get['product_id'])) {
+LINE: 99
+CODE: case 'product/product':
+LINE: 164
+CODE: case 'product_id':
+LINE: 229
+CODE: private function getPathByProduct($product_id) {
+LINE: 357
+
+FILE: catalog/controller/information/sitemap.php
+CODE: $this->load->model('catalog/information');
+LINE: 118
+
+FILE: catalog/view/theme/default/template/information/sitemap.tpl
+CODE: <li><?php echo $text_information; ?>
+LINE: 69
+
+FILE: catalog/controller/common/header.php
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 184
+----------------------------------------------------------------
