@@ -12,13 +12,13 @@ echo $header;
             <div class="inner-head">
                 <ul class="bread-crumbs">
                     <?php $i = 0; foreach ($breadcrumbs as $breadcrumb): ?>
-                    <?php if ($i == 0):?>
-                    <li><a href="/">Главная</a></li>
-                    <?php elseif ($last_elem !== $breadcrumb): ?>
-                    <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
-                    <?php elseif ($last_elem == $breadcrumb): ?>
-                    <li><?php echo $breadcrumb['text']; ?></li>
-                    <?php endif;?>
+                        <?php if ($i == 0):?>
+                            <li><a href="/">Главная</a></li>
+                        <?php elseif ($last_elem !== $breadcrumb): ?>
+                            <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
+                        <?php elseif ($last_elem == $breadcrumb): ?>
+                            <li><?php echo $breadcrumb['text']; ?></li>
+                        <?php endif;?>
                     <?php $i++; endforeach;?>
                 </ul>
             </div>

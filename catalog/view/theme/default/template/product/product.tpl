@@ -161,7 +161,6 @@ echo $header;
             </div>
         </div>
 
-
         <div class="two-column-wrapp group">
             <div class="aside-column hidden-devices">
                 <div class="aside-nav-banner hidden-devices">
