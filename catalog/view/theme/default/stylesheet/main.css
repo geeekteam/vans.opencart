@@ -1526,6 +1526,8 @@ a:hover {
   background-color: #ededed;
   padding: 35px 20px 40px;
   border-radius: 0 0 6px 6px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .modal-contacts-form .form-group {

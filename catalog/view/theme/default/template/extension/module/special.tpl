@@ -30,7 +30,7 @@
                             </div>
                         </div>
 
-                        <form action="/" method="post" class="main-banner-buy js-send-form" data-form-type="main-banner">
+                        <form action="/" method="post" class="main-banner-buy jq-send-form" data-form-type="main-banner">
                             <?php if($product['name']): ?>
                             <span class="m-banner-prod-tt">
                                 <?=$product['name'];?>
@@ -38,11 +38,11 @@
                             <?php endif; ?>
                             <div class="form-group form-group-icon">
                                 <i class="icon icon-inp-user"></i>
-                                <input type="text" placeholder="Ваше имя" class="js-name">
+                                <input type="text" placeholder="Ваше имя" name="firstname">
                             </div>
                             <div class="form-group form-group-icon">
                                 <i class="icon icon-inp-phone"></i>
-                                <input type="text" placeholder="Ваш телефон" id="phoneFromSpecial" class="mask-phone js-phone">
+                                <input type="text" placeholder="Ваш телефон" class="mask-phone" name="telephone">
                             </div>
                             <div class="form-group-size">
                                 <span class="form-label-min">Размер (RUS)</span>
@@ -50,17 +50,17 @@
                                     <?php if($option['option_id'] == 13): ?>
                                         <?php $j = 0; foreach(($option['product_option_value']) as $sizes):?>
                                             <div class="form-group-input-size">
-                                                <input class="js-size" type="radio" name="m-size" value="<?=$sizes['product_option_value_id']?>" data-size="<?php echo $sizes['name']; ?>" id="mSize<?=$j;?>">
-                                                <label class="js-size-label" for="mSize<?=$j;?>"><?php echo($sizes['name']);?></label>
+                                                <input type="radio" name="product_size" value="<?=$sizes['product_option_value_id']?>" data-size="<?php echo $sizes['name']; ?>" id="mSize<?=$j;?>">
+                                                <label class="jq-product-size-label" for="mSize<?=$j;?>"><?php echo($sizes['name']);?></label>
                                             </div>
                                         <?php $j++; endforeach;?>
                                     <?php endif;?>
                                 <?php endforeach;?>
                             </div>
-                            <input type="hidden" class="js-title" value="<?php echo $product['name']; ?>">
-                            <input type="hidden" class="js-price" value="<?=str_replace('.00 р.', '', $product['special']);?> руб.">
-                            <input type="hidden" class="js-product-id" value="<?php echo $product['product_id']; ?>">
-                            <button class="js-btn btn btn-lg btn-max" type="submit">КУПИТЬ</button>
+                            <input type="hidden" name="product_name" value="<?php echo $product['name']; ?>">
+                            <input type="hidden" name="product_price" value="<?=str_replace('.00 р.', '', $product['special']);?> руб.">
+                            <input type="hidden" name="product_id" value="<?php echo $product['product_id']; ?>">
+                            <button class="jq-btn btn btn-lg btn-max" type="submit">КУПИТЬ</button>
                         </form>
                         <div class="thanks js-thanks">
                             <h3>Спасибо за покупку!</h3>

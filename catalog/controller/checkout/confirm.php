@@ -427,4 +427,15 @@ class ControllerCheckoutConfirm extends Controller {
 
 		$this->response->setOutput($this->load->view('checkout/confirm', $data));
 	}
+
+	function addFromMain() {
+
+        $order_datas = array();
+        $this->load->model('checkout/order');
+
+        foreach ($this->request->post as $product) $this->model_checkout_order->insertOrder($product);
+
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($order_datas));
+    }
 }

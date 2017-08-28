@@ -127,7 +127,7 @@ var $sendForm = $('.js-send-form'),
     $thanksModal = $('.thanks-modal'),
     $closeThanksBtn = $('.js-close-thanks');
 
-$sendForm.each(function () {
+/*$sendForm.each(function () {
     var $this = $(this);
     if ($this.data('form-type') === 'main-banner') {
         $this.submit(function (t) {
@@ -211,7 +211,7 @@ $sendForm.each(function () {
             }
         })
     }
-});
+});*/
 
 
 $closeThanksBtn.click(function () {
@@ -295,3 +295,58 @@ $('.js-btn-buy').click(function(e) {
         }
     });
 });
+
+$(document).on('submit', '.jq-send-form', function(e) {
+    e.preventDefault();
+
+    var $form = $(this),
+        tempData = {},
+        data = [];
+
+    $.each($form.serializeArray(), function(key, input) {
+        tempData[input.name] = input.value;
+    });
+
+    data.push(tempData);
+
+    addOrder(data, function(response) {
+        console.log(response);
+    });
+});
+
+$(document).on('submit', '.jqs-send-form', function(e) {
+    e.preventDefault();
+
+    var $form = $(this),
+        tempData = {},
+        data = [];
+
+    $.each($form.serializeArray(), function(key, input) {
+        if(input.name.indexOf('][') > -1) {
+            var slitedInput = input.name.split('][');
+            tempData[slitedInput[1].replace(']', '')] = input.value;
+        }
+
+    });
+
+    data.push(tempData);
+
+    console.log(data);
+
+    /*addOrder(data, function(response) {
+        console.log(response);
+    });*/
+});
+
+function addOrder(data, callback) {
+    $.ajax({
+        url: 'index.php?route=checkout/confirm/addFromMain',
+        type: 'post',
+        data: data,
+        dataType: 'json',
+        success: function (response) {
+            callback(response);
+        }
+    });
+
+}

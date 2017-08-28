@@ -45,7 +45,7 @@
         </div>
     </div>
 
-    <div id="cartModal" class="cart-modal mfp-hide">
+    <form id="cartModal" class="cart-modal mfp-hide jqs-send-form">
         <div class="cart-modal-inner">
             <div class="service-icon-flex">
                 <div class="service-icon-item">
@@ -99,98 +99,59 @@
 
 
             <div class="prod-cart-table">
-                <div class="prod-cart-row">
-                    <div class="prod-cart-col t-col-1">
-                        <span class="prod-cart-img"><img src="/image/prod1.jpg" alt=""></span>
-                    </div>
 
-                    <div class="prod-cart-col t-col-2">
-                        <span class="prod-cart-name">
-                          <span>Кеды Vans Old Skool</span>
-                          <span>зеленые</span>
-                        </span>
-                    </div>
+                <?php foreach($cart as $cartItem) : ?>
+                <input type="hidden" name="products[<?=$cartItem['product_id']; ?>][product_id]" value="<?=$cartItem['product_id']; ?>">
+                <input type="hidden" name="products[<?=$cartItem['name']; ?>][product_name]" value="<?=$cartItem['product_name']; ?>">
+                    <div class="prod-cart-row">
+                        <div class="prod-cart-col t-col-1">
+                            <span class="prod-cart-img"><img src="/image/<?=$cartItem['image']; ?>" alt=""></span>
+                        </div>
 
-                    <div class="prod-cart-col t-col-3">
-                        <div class="prod-cart-select-wrapp">
-                            <span class="prod-cart-label-select">Размер</span>
-                            <select name="" id="">
-                                <option value="">41</option>
-                                <option value="">42</option>
-                                <option value="">43</option>
-                                <option value="">44</option>
-                                <option value="">45</option>
-                            </select>
+                        <div class="prod-cart-col t-col-2">
+                            <span class="prod-cart-name">
+                              <span><?=$cartItem['name']; ?></span>
+                            </span>
+                        </div>
+
+                        <div class="prod-cart-col t-col-3">
+                            <div class="prod-cart-select-wrapp">
+                                <span class="prod-cart-label-select">Размер</span>
+                                <select name="" id="">
+                                    <?php foreach($cartItem['options'] as $option) : ?>
+                                        <?php if($option['product_option_id'] == 227) : ?>
+                                            <?php foreach($option['product_option_value'] as $optionValue) : ?>
+                                            <?php $selectedOption = ($optionValue['product_option_value_id'] ==  $cartItem['option'][0]['product_option_value_id']) ? 'selected' : '';?>
+                                                <option value="<?=$optionValue['product_option_value_id']; ?>" <?=$selectedOption;?>><?=$optionValue['name']; ?> </option>
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="prod-cart-col t-col-4">
+                            <div class="prod-cart-select-wrapp">
+                                <span class="prod-cart-label-select">Количество</span>
+                                <select name="" id="">
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                    <option value="">4</option>
+                                    <option value="">5</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="prod-cart-col t-col-5">
+                            <span class="prod-cart-price"><?=$cartItem['price'];?> руб.</span>
+                        </div>
+
+                        <div class="prod-cart-col t-col-6">
+                            <a href="#" class="icon icon-close"></a>
                         </div>
                     </div>
-
-                    <div class="prod-cart-col t-col-4">
-                        <div class="prod-cart-select-wrapp">
-                            <span class="prod-cart-label-select">Количество</span>
-                            <select name="" id="">
-                                <option value="">1</option>
-                                <option value="">2</option>
-                                <option value="">3</option>
-                                <option value="">4</option>
-                                <option value="">5</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="prod-cart-col t-col-5">
-                        <span class="prod-cart-price">2 590 руб.</span>
-                    </div>
-
-                    <div class="prod-cart-col t-col-6">
-                        <a href="#" class="icon icon-close"></a>
-                    </div>
-                </div>
-
-                <div class="prod-cart-row">
-                    <div class="prod-cart-col t-col-1">
-                        <span class="prod-cart-img"><img class="js-cart-image" src="" alt=""></span>
-                    </div>
-
-                    <div class="prod-cart-col t-col-2">
-                        <span class="prod-cart-name">
-                          <span class="js-cart-name"></span>
-                        </span>
-                    </div>
-
-                    <div class="prod-cart-col t-col-3">
-                        <div class="prod-cart-select-wrapp">
-                            <span class="prod-cart-label-select">Размер</span>
-                            <select name="" id="">
-                                <option value="">41</option>
-                                <option value="">42</option>
-                                <option value="">43</option>
-                                <option value="">44</option>
-                                <option value="">45</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="prod-cart-col t-col-4">
-                        <div class="prod-cart-select-wrapp">
-                            <span class="prod-cart-label-select">Количество</span>
-                            <select name="" id="">
-                                <option value="">1</option>
-                                <option value="">2</option>
-                                <option value="">3</option>
-                                <option value="">4</option>
-                                <option value="">5</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="prod-cart-col t-col-5">
-                        <span class="prod-cart-price js-cart-price"></span>
-                    </div>
-
-                    <div class="prod-cart-col t-col-6">
-                        <a href="#" class="icon icon-close"></a>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
 
             <div class="prod-cart-table-summ">
@@ -208,25 +169,23 @@
 
                 <div class="cart-table-summ-value">
                     <span>Итого:</span>
-                    <span class="prod-cart-price">4 580 руб.</span>
+                    <span class="prod-cart-price"><?=$cartItem['total'];?> руб.</span>
                 </div>
             </div>
         </div>
 
         <div class="modal-contacts-form">
-            <form action="#">
-                <div class="form-group form-group-icon">
-                    <i class="icon icon-inp-user"></i>
-                    <input type="text" placeholder="Ваше имя" id="input-name">
-                </div>
-                <div class="form-group form-group-icon">
-                    <i class="icon icon-inp-phone"></i>
-                    <input type="text" placeholder="Ваш телефон" id="input-phone" class="mask-phone">
-                </div>
-                <button class="btn" type="submit">ОФОРМИТЬ</button>
-            </form>
+            <div class="form-group form-group-icon">
+                <i class="icon icon-inp-user"></i>
+                <input type="text" placeholder="Ваше имя" id="input-name" name="firstname">
+            </div>
+            <div class="form-group form-group-icon">
+                <i class="icon icon-inp-phone"></i>
+                <input type="text" placeholder="Ваш телефон" id="input-phone" class="mask-phone" name="telephone">
+            </div>
+            <button class="btn" type="submit">ОФОРМИТЬ</button>
         </div>
-    </div>
+    </form>
 
     <div id="thanksModal" class="call-modal mfp-hide">
         <div class="modal-contacts-form">
