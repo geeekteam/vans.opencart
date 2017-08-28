@@ -219,45 +219,6 @@ $closeThanksBtn.click(function () {
     $sendForm.removeClass('hidden');
 });
 
-// function buy() {
-    /*var $buyButton = $('.js-btn-buy');
-    $buyButton.click(function () {
-        var $cart = $('.cart-modal'),
-            $cartTable = $cart.find('.prod-cart-table'),
-            $cartProduct = $cartTable.find('.prod-cart-row').first(),
-            $image = $('.js-item-image'),
-            $name = $('.js-title'),
-            $size = $('.js-size[type=radio]:checked').attr('data-size'),
-            $specialPrice = $('.js-special-price'),
-            $price = $('.js-price');
-        console.log($name.html());
-        console.log();
-        console.log($image.attr('src'));
-        console.log();
-        console.log($size);
-        console.log();
-        console.log($specialPrice.html());
-        console.log();
-        console.log($price.html());
-        console.log();
-        console.log($cartTable);
-        console.log();
-        console.log($cartProduct);
-
-        $cartProduct.clone().appendTo($cartTable);
-
-        var $lastCartProduct = $cartTable.find('.prod-cart-row').last(),
-            $lastCartProductImage = $lastCartProduct.find('.js-cart-image').attr('src'),
-            $lastCartProductName = $lastCartProduct.find('.js-cart-name').html(),
-            $lastCartProductPrice = $lastCartProduct.find('.')
-            ;
-        console.log();
-        console.log($lastCartProduct);
-
-
-    })*/
-// }
-
 var getCartAddedNewProduct = function($product_id, callback) {
     $.post('/?route=checkout/checkout/single', {product_id: $product_id}, function(response) {
         callback(response);
@@ -333,9 +294,9 @@ $(document).on('submit', '.jqs-send-form', function(e) {
 
     console.log(data);
 
-    // /*addOrder(data, function(response) {
-    //     console.log(response);
-    // });*/
+    /*addOrder(data, function(response) {
+        console.log(response);
+    });*/
 });
 
 function addOrder(data, callback) {
@@ -350,3 +311,10 @@ function addOrder(data, callback) {
     });
 
 }
+
+$('.prod-cart-input').on('focusout', function () {
+    var count = $(this).val(),
+        price = $(this).closest('.prod-cart-row').find('.prod-cart-price').html(),
+        $totalPriceSpan = $(this).find('.prod-cart-price').html();
+    console.log(price);
+})

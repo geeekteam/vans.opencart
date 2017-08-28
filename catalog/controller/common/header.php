@@ -291,7 +291,6 @@ class ControllerCommonHeader extends Controller
         $data['currency'] = $this->load->controller('common/currency');
         $data['search'] = $this->load->controller('common/search');
         $data['cart'] = $this->cart->getProducts();
-        $data['cart'] = $this->cart->getProducts();
 
         // For page specific css
         if (isset($this->request->get['route'])) {
@@ -317,7 +316,7 @@ class ControllerCommonHeader extends Controller
         }
 
 
-        /*echo '<pre>';
+/*        echo '<pre>';
         print_r($data['cart']);
         echo '</pre>';
 

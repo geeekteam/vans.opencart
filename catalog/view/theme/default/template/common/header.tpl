@@ -102,7 +102,7 @@
 
                 <?php foreach($cart as $cartItem) : ?>
                 <input type="hidden" name="products[<?=$cartItem['product_id']; ?>][product_id]" value="<?=$cartItem['product_id']; ?>">
-                <input type="hidden" name="products[<?=$cartItem['name']; ?>][product_name]" value="<?=$cartItem['product_name']; ?>">
+                <input type="hidden" name="products[<?=$cartItem['name']; ?>][product_name]" value="<?=$cartItem['name']; ?>">
                     <div class="prod-cart-row">
                         <div class="prod-cart-col t-col-1">
                             <span class="prod-cart-img"><img src="/image/<?=$cartItem['image']; ?>" alt=""></span>
@@ -119,7 +119,7 @@
                                 <span class="prod-cart-label-select">Размер</span>
                                 <select name="" id="">
                                     <?php foreach($cartItem['options'] as $option) : ?>
-                                        <?php if($option['product_option_id'] == 227) : ?>
+                                        <?php if($option['product_option_id'] == 243) : ?>
                                             <?php foreach($option['product_option_value'] as $optionValue) : ?>
                                             <?php $selectedOption = ($optionValue['product_option_value_id'] ==  $cartItem['option'][0]['product_option_value_id']) ? 'selected' : '';?>
                                                 <option value="<?=$optionValue['product_option_value_id']; ?>" <?=$selectedOption;?>><?=$optionValue['name']; ?> </option>
@@ -133,13 +133,14 @@
                         <div class="prod-cart-col t-col-4">
                             <div class="prod-cart-select-wrapp">
                                 <span class="prod-cart-label-select">Количество</span>
-                                <select name="" id="">
+                                <input class="prod-cart-input" type="text" name="<?=$cartItem['quantity'];?>[product_quantity]" value="<?=$cartItem['quantity'];?>">
+                                <!--<select name="" id="">
                                     <option value="">1</option>
                                     <option value="">2</option>
                                     <option value="">3</option>
                                     <option value="">4</option>
                                     <option value="">5</option>
-                                </select>
+                                </select>-->
                             </div>
                         </div>
 
@@ -158,15 +159,14 @@
                 <div class="cart-table-del">
                     <b>Доставка:</b>
                     <span class="cart-table-del-item">
-            <input type="radio" checked id="rad1" name="delrad">
-            <label for="rad1">по Москве</label>
-          </span>
+                        <input type="radio" checked id="rad1" name="delrad">
+                        <label for="rad1">по Москве</label>
+                    </span>
                     <span class="cart-table-del-item">
-            <input type="radio" id="rad2" name="delrad">
-            <label for="rad2">по России (+390 руб.)</label>
-          </span>
+                        <input type="radio" id="rad2" name="delrad">
+                        <label for="rad2">по России (+390 руб.)</label>
+                    </span>
                 </div>
-
                 <div class="cart-table-summ-value">
                     <span>Итого:</span>
                     <span class="prod-cart-price"><?=$cartItem['total'];?> руб.</span>

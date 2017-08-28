@@ -3602,3 +3602,17 @@ button.mfp-close:active {
   }
   /* end media min width 1024 pixels */
 }
+
+.prod-cart-select-wrapp input[type="text"] {
+  width: 85px;
+}
+
+.prod-cart-input {
+  display: inline-block;
+  border: 1px solid #d6d6d6;
+  border-radius: 20px;
+  width: 85px;
+  height: 40px;
+  background-color: #fff;
+  text-align: center;
+}
