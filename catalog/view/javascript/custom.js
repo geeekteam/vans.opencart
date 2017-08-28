@@ -333,9 +333,9 @@ $(document).on('submit', '.jqs-send-form', function(e) {
 
     console.log(data);
 
-    /*addOrder(data, function(response) {
-        console.log(response);
-    });*/
+    // /*addOrder(data, function(response) {
+    //     console.log(response);
+    // });*/
 });
 
 function addOrder(data, callback) {
