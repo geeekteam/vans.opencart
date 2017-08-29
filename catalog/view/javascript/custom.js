@@ -322,7 +322,20 @@ $('.js-remove-item').on('click', function () {
    var $item = $(this).closest('.prod-cart-row'),
        $allItems = $item.closest();
 
-    $item.remove();
+    // $item.remove();
 
-    console.log($item);
+    $.ajax({
+        url: 'index.php?route=checkout/cart/remove',
+        type: 'post',
+        data: 'key=' + key,
+        dataType: 'json',
+
+        success: function(key) {
+        }
+    });
+
 });
+
+var cart = {
+
+};

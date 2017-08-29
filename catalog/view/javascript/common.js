@@ -233,6 +233,7 @@ var cart = {
 				alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 			}
 		});
+        console.log(key);
 	}
 }
 

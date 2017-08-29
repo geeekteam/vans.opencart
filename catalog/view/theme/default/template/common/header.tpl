@@ -98,7 +98,7 @@
             </div>
 
 
-            <div class="prod-cart-table">
+            <div class="prod-cart-table" id="cart">
 
                 <?php foreach($cart as $cartItem) : ?>
                     <div class="prod-cart-row">
@@ -147,7 +147,7 @@
                         </div>
 
                         <div class="prod-cart-col t-col-6">
-                            <a href="#" class="icon icon-close js-remove-item"></a>
+                            <a href="#" class="icon icon-close js-remove-item" onclick="cart.remove('<?php echo $product['cart_id']; ?>');"></a>
                         </div>
                     </div>
                 <?php endforeach; ?>
