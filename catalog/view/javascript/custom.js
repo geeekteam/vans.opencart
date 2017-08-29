@@ -128,90 +128,90 @@ var $sendForm = $('.js-send-form'),
     $closeThanksBtn = $('.js-close-thanks');
 
 /*$sendForm.each(function () {
-    var $this = $(this);
-    if ($this.data('form-type') === 'main-banner') {
-        $this.submit(function (t) {
-            t.preventDefault();
-            var $cphone = $this.find('.js-phone'),
-                $cname = 'Заказ товара от: ' + $this.find('.js-name').val(),
-                $title = $this.find('.js-title').val(),
-                $price = $this.find('.js-price').val(),
-                $size = $this.find('.js-size[type=radio]:checked').attr('data-size'),
-                $productId = $this.find('.js-product-id').val(),
-                $button = $this.find('.js-btn');
-            if (validatePhone($cphone.val()) == true) {
-                $cphone.removeAttr('style');
-                var order = 'cphone=' + $cphone.val() + '&iname=' + $cname + '&ititle=' + $title + '&iprice=' + $price + '&ipriceTotal=' + $price + '&prid=' + $productId + '&isize=' + $size;
-                $.ajax({
-                    url: 'index.php?route=checkout/cart/addorder',
-                    type: 'post',
-                    data: order,
-                    dataType: 'json',
-                    beforeSend: function () {
-                        $button.text('Отправка...');
-                    },
-                    complete: function () {
-                        $button.text('Купить');
-                    },
-                    success: function (json) {
-                        if (json['error']) {
-                            if (json['error']['phone']) {
-                                $cphone.css('border', '1px solid red');
-                            }
-                        }
-                        $cphone.removeAttr('style');
-                        $this.addClass('hidden');
-                        $thanks.addClass('active');
-                    }
-                });
-            } else {
-                $cphone.css('border', '1px solid red');
-            }
-        })
-    }
+ var $this = $(this);
+ if ($this.data('form-type') === 'main-banner') {
+ $this.submit(function (t) {
+ t.preventDefault();
+ var $cphone = $this.find('.js-phone'),
+ $cname = 'Заказ товара от: ' + $this.find('.js-name').val(),
+ $title = $this.find('.js-title').val(),
+ $price = $this.find('.js-price').val(),
+ $size = $this.find('.js-size[type=radio]:checked').attr('data-size'),
+ $productId = $this.find('.js-product-id').val(),
+ $button = $this.find('.js-btn');
+ if (validatePhone($cphone.val()) == true) {
+ $cphone.removeAttr('style');
+ var order = 'cphone=' + $cphone.val() + '&iname=' + $cname + '&ititle=' + $title + '&iprice=' + $price + '&ipriceTotal=' + $price + '&prid=' + $productId + '&isize=' + $size;
+ $.ajax({
+ url: 'index.php?route=checkout/cart/addorder',
+ type: 'post',
+ data: order,
+ dataType: 'json',
+ beforeSend: function () {
+ $button.text('Отправка...');
+ },
+ complete: function () {
+ $button.text('Купить');
+ },
+ success: function (json) {
+ if (json['error']) {
+ if (json['error']['phone']) {
+ $cphone.css('border', '1px solid red');
+ }
+ }
+ $cphone.removeAttr('style');
+ $this.addClass('hidden');
+ $thanks.addClass('active');
+ }
+ });
+ } else {
+ $cphone.css('border', '1px solid red');
+ }
+ })
+ }
 
-    if ($this.data('form-type') === 'modal-call') {
-        $this.submit(function (t) {
-            t.preventDefault();
-            var $cphone = $this.find('.js-phone'),
-                $cname = 'Заказ звонка от: ' + $this.find('.js-name').val(),
-                $button = $this.find('.js-btn');
-            if (validatePhone($cphone.val()) == true) {
-                $cphone.removeAttr('style');
-                var order = 'cphone=' + $cphone.val() + '&iname=' + $cname;
-                $.ajax({
-                    url: 'index.php?route=checkout/cart/addorder',
-                    type: 'post',
-                    data: order,
-                    dataType: 'json',
-                    beforeSend: function () {
-                        $button.text('Отправка...');
-                    },
-                    complete: function () {
-                        $button.text('Оформить');
-                    },
-                    success: function (json) {
-                        if (json['error']) {
-                            if (json['error']['phone']) {
-                                $cphone.css('border', '1px solid red');
-                            }
-                        }
-                        $cphone.removeAttr('style');
-                        $.magnificPopup.close();
-                        $.magnificPopup.open({
-                            items: {
-                                src: '#thanksModal',
-                                type: 'inline'
-                            }
-                        })
-                    }
-                });
-            } else {
-                $cphone.css('border', '1px solid red');
-            }
-        })
-    }
-});*/
+ if ($this.data('form-type') === 'modal-call') {
+ $this.submit(function (t) {
+ t.preventDefault();
+ var $cphone = $this.find('.js-phone'),
+ $cname = 'Заказ звонка от: ' + $this.find('.js-name').val(),
+ $button = $this.find('.js-btn');
+ if (validatePhone($cphone.val()) == true) {
+ $cphone.removeAttr('style');
+ var order = 'cphone=' + $cphone.val() + '&iname=' + $cname;
+ $.ajax({
+ url: 'index.php?route=checkout/cart/addorder',
+ type: 'post',
+ data: order,
+ dataType: 'json',
+ beforeSend: function () {
+ $button.text('Отправка...');
+ },
+ complete: function () {
+ $button.text('Оформить');
+ },
+ success: function (json) {
+ if (json['error']) {
+ if (json['error']['phone']) {
+ $cphone.css('border', '1px solid red');
+ }
+ }
+ $cphone.removeAttr('style');
+ $.magnificPopup.close();
+ $.magnificPopup.open({
+ items: {
+ src: '#thanksModal',
+ type: 'inline'
+ }
+ })
+ }
+ });
+ } else {
+ $cphone.css('border', '1px solid red');
+ }
+ })
+ }
+ });*/
 
 
 $closeThanksBtn.click(function () {
@@ -277,26 +277,32 @@ $(document).on('submit', '.jq-send-form', function(e) {
 
 $(document).on('submit', '.jqs-send-form', function(e) {
     e.preventDefault();
-
     var $form = $(this),
-        tempData = {},
-        data = [];
+        data = {products: {}};
 
-    $.each($form.serializeArray(), function(key, input) {
-        if(input.name.indexOf('][') > -1) {
-            var slitedInput = input.name.split('][');
-            tempData[slitedInput[1].replace(']', '')] = input.value;
+
+    $.each($form.serializeArray(), function (index, input) {
+        if(input.name.indexOf('products[') > -1) {
+            var slitedInput = input.name.split(']['),
+                productId = slitedInput[0].replace('products[', ''),
+                fieldName = slitedInput[1].replace(']', '');
+
+            if(data.products[productId] === undefined) data.products[productId] = {};
+
+            data.products[productId][fieldName] = input.value;
+        } else {
+            data[input.name] = input.value;
         }
 
     });
 
-    data.push(tempData);
-
     console.log(data);
 
-    /*addOrder(data, function(response) {
+    addOrder(data, function(response) {
         console.log(response);
-    });*/
+    });
+
+
 });
 
 function addOrder(data, callback) {
@@ -312,9 +318,11 @@ function addOrder(data, callback) {
 
 }
 
-$('.prod-cart-input').on('focusout', function () {
-    var count = $(this).val(),
-        price = $(this).closest('.prod-cart-row').find('.prod-cart-price').html(),
-        $totalPriceSpan = $(this).find('.prod-cart-price').html();
-    console.log(price);
-})
+$('.js-remove-item').on('click', function () {
+   var $item = $(this).closest('.prod-cart-row'),
+       $allItems = $item.closest();
+
+    $item.remove();
+
+    console.log($item);
+});

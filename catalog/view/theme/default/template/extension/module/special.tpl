@@ -57,9 +57,16 @@
                                     <?php endif;?>
                                 <?php endforeach;?>
                             </div>
-                            <input type="hidden" name="product_name" value="<?php echo $product['name']; ?>">
-                            <input type="hidden" name="product_price" value="<?=str_replace('.00 р.', '', $product['special']);?> руб.">
-                            <input type="hidden" name="product_id" value="<?php echo $product['product_id']; ?>">
+                            <input type="hidden" name="[<?php echo $product['name']; ?>][product_name]" value="<?php echo $product['name']; ?>">
+                            <input type="hidden" name="[<?=str_replace('.00 р.', '', $product['special']);?>][product_price]" value="<?=str_replace('.00 р.', '', $product['special']);?> руб.">
+                            <input type="hidden" name="[<?php echo $product['product_id']; ?>][product_id]" value="<?php echo $product['product_id']; ?>">
+                            <?php foreach($product['options'] as $option):?>
+                                <?php if($option['option_id'] == 13): ?>
+                                    <?php $j = 0; foreach(($option['product_option_value']) as $sizes):?>
+                                        <input type="hidden" name="[<?php echo $sizes['name']; ?>][product_size]" value="<?php echo $sizes['name']; ?>">
+                                    <?php $j++; endforeach;?>
+                                <?php endif;?>
+                            <?php endforeach;?>
                             <button class="jq-btn btn btn-lg btn-max" type="submit">КУПИТЬ</button>
                         </form>
                         <div class="thanks js-thanks">

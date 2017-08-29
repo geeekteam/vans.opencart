@@ -836,8 +836,8 @@ class ModelCheckoutOrder extends Model {
 			firstname = '" . $this->db->escape($data['firstname']) . "', 
 			lastname = '', 
 			email = '', 
-			telephone = '" . $this->db->escape(isset($data['phone']) ? $data['phone'] : '') . "', 
-			fax = '" . $this->db->escape(isset($data['link']) ? $data['link'] : '') . "', 
+			telephone = '" . $this->db->escape($data['telephone']) . "', 
+			fax = '', 
 			custom_field = '[]', 
 			payment_firstname = '', 
 			payment_lastname = '', 
@@ -869,8 +869,8 @@ class ModelCheckoutOrder extends Model {
 			shipping_custom_field = '[]', 
 			shipping_method = '', 
 			shipping_code = 'flat.flat', 
-			comment = '" . $this->db->escape($data['pscomment']) . "', 
-			total = '" . $this->db->escape(isset($data['priceTotal']) ? (float)$data['priceTotal'] : '0') . "', 
+			comment = '" . $this->db->escape($data['product_comment']) . "', 
+			total = '" . $this->db->escape(isset($data['total']) ? (float)$data['total'] : '0') . "', 
 			order_status_id = '1', 
 			affiliate_id = '0', 
 			commission = '0.0000', 
@@ -891,8 +891,8 @@ class ModelCheckoutOrder extends Model {
         $order_id = $this->db->getLastId();
 
         // Product
-        if (isset($data['title']) && isset($data['prid']) && isset($data['shipping'])) {
-            $this->db->query("INSERT INTO " . DB_PREFIX . "order_product SET order_id = '" . (int)$order_id . "', product_id = '" . (int)$data['prid'] . "', name = '" . $this->db->escape($data['title']) . "', quantity = '1', price = '" . (float)$data['price'] . "', total = '" . (float)$data['price'] . "'");
+        if (isset($data['product_name']) && isset($data['product_id'])) {
+            $this->db->query("INSERT INTO " . DB_PREFIX . "order_product SET order_id = '" . (int)$order_id . "', product_id = '" . (int)$data['product_id'] . "', name = '" . $this->db->escape($data['product_name']) . "', quantity = '1', price = '" . (float)$data['price'] . "', total = '" . (float)$data['price'] . "'");
 
             $this->db->query("INSERT INTO " . DB_PREFIX . "order_history SET order_id = '" . (int)$order_id . "', order_status_id = '1', notify = '1'");
 

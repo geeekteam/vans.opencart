@@ -101,9 +101,14 @@
             <div class="prod-cart-table">
 
                 <?php foreach($cart as $cartItem) : ?>
-                <input type="hidden" name="products[<?=$cartItem['product_id']; ?>][product_id]" value="<?=$cartItem['product_id']; ?>">
-                <input type="hidden" name="products[<?=$cartItem['name']; ?>][product_name]" value="<?=$cartItem['name']; ?>">
                     <div class="prod-cart-row">
+                        <input type="hidden" name="products[<?=$cartItem['product_id']; ?>][product_id]" value="<?=$cartItem['product_id']; ?>">
+                        <input type="hidden" name="products[<?=$cartItem['product_id']; ?>][product_name]" value="<?=$cartItem['name']; ?>">
+                        <?php foreach($cartItem['option'] as $option) : ?>
+                            <?php if($option['option_id'] == 13) : ?>
+                                <input type="hidden" name="products[<?=$cartItem['product_id']; ?>][product_comment]" value="<?=$option['value']; ?>">
+                            <?php endif; ?>
+                        <?php endforeach; ?>
                         <div class="prod-cart-col t-col-1">
                             <span class="prod-cart-img"><img src="/image/<?=$cartItem['image']; ?>" alt=""></span>
                         </div>
@@ -119,7 +124,7 @@
                                 <span class="prod-cart-label-select">Размер</span>
                                 <select name="" id="">
                                     <?php foreach($cartItem['options'] as $option) : ?>
-                                        <?php if($option['product_option_id'] == 243) : ?>
+                                        <?php if($option['option_id'] == 13) : ?>
                                             <?php foreach($option['product_option_value'] as $optionValue) : ?>
                                             <?php $selectedOption = ($optionValue['product_option_value_id'] ==  $cartItem['option'][0]['product_option_value_id']) ? 'selected' : '';?>
                                                 <option value="<?=$optionValue['product_option_value_id']; ?>" <?=$selectedOption;?>><?=$optionValue['name']; ?> </option>
@@ -134,22 +139,15 @@
                             <div class="prod-cart-select-wrapp">
                                 <span class="prod-cart-label-select">Количество</span>
                                 <input class="prod-cart-input" type="text" name="<?=$cartItem['quantity'];?>[product_quantity]" value="<?=$cartItem['quantity'];?>">
-                                <!--<select name="" id="">
-                                    <option value="">1</option>
-                                    <option value="">2</option>
-                                    <option value="">3</option>
-                                    <option value="">4</option>
-                                    <option value="">5</option>
-                                </select>-->
                             </div>
                         </div>
 
                         <div class="prod-cart-col t-col-5">
-                            <span class="prod-cart-price"><?=$cartItem['price'];?> руб.</span>
+                            <span class="prod-cart-price"><?=$cartItem['total'];?> руб.</span>
                         </div>
 
                         <div class="prod-cart-col t-col-6">
-                            <a href="#" class="icon icon-close"></a>
+                            <a href="#" class="icon icon-close js-remove-item"></a>
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -169,7 +167,9 @@
                 </div>
                 <div class="cart-table-summ-value">
                     <span>Итого:</span>
-                    <span class="prod-cart-price"><?=$cartItem['total'];?> руб.</span>
+                    <?php foreach($totals as $total): ?>
+                        <span class="prod-cart-price"><?=$total['text'];?></span>
+                    <?php break; endforeach; ?>
                 </div>
             </div>
         </div>
@@ -177,11 +177,11 @@
         <div class="modal-contacts-form">
             <div class="form-group form-group-icon">
                 <i class="icon icon-inp-user"></i>
-                <input type="text" placeholder="Ваше имя" id="input-name" name="firstname">
+                <input type="text" placeholder="Ваше имя" id="input-name" name="firstname" value="name">
             </div>
             <div class="form-group form-group-icon">
                 <i class="icon icon-inp-phone"></i>
-                <input type="text" placeholder="Ваш телефон" id="input-phone" class="mask-phone" name="telephone">
+                <input type="text" placeholder="Ваш телефон" id="input-phone" class="mask-phone" name="telephone" value="+7 (768) 678-67-86">
             </div>
             <button class="btn" type="submit">ОФОРМИТЬ</button>
         </div>
@@ -231,14 +231,16 @@
                         <span class="logo-slogan"><?=$name;?></span>
                     </div>
                 <?php endif; ?>
-                <div class="head-cart">
-                    <a href="#cartModal" class="head-cart-link open-modal">
-                        <svg class="icon icon-bag">
-                            <use xlink:href="/image/svg/sprite_svg.svg#icon-bag"></use>
-                        </svg>
-                        <span class="head-cart-value">2</span>
-                    </a>
-                </div>
+                <?php if(isset($cartItem)):?>
+                    <div class="head-cart">
+                        <a href="#cartModal" class="head-cart-link open-modal">
+                            <svg class="icon icon-bag">
+                                <use xlink:href="/image/svg/sprite_svg.svg#icon-bag"></use>
+                            </svg>
+                            <span class="head-cart-value"><?=count($cart);?></span>
+                        </a>
+                    </div>
+                <?php endif; ?>
                 <div class="head-search hidden-mobile">
                     <svg class="icon h-search">
                         <use xlink:href="/image/svg/sprite_svg.svg#search-icon"></use>

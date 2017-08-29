@@ -8,18 +8,18 @@ define('HTTPS_SERVER', 'http://vans.opencart/admin/');
 define('HTTPS_CATALOG', 'http://vans.opencart/');
 
 // DIR
-define('DIR_APPLICATION', 'D:/dev/vans.opencart/admin/');
-define('DIR_SYSTEM', 'D:/dev/vans.opencart/system/');
-define('DIR_IMAGE', 'D:/dev/vans.opencart/image/');
-define('DIR_LANGUAGE', 'D:/dev/vans.opencart/admin/language/');
-define('DIR_TEMPLATE', 'D:/dev/vans.opencart/admin/view/template/');
-define('DIR_CONFIG', 'D:/dev/vans.opencart/system/config/');
-define('DIR_CACHE', 'D:/dev/vans.opencart/system/storage/cache/');
-define('DIR_DOWNLOAD', 'D:/dev/vans.opencart/system/storage/download/');
-define('DIR_LOGS', 'D:/dev/vans.opencart/system/storage/logs/');
-define('DIR_MODIFICATION', 'D:/dev/vans.opencart/system/storage/modification/');
-define('DIR_UPLOAD', 'D:/dev/vans.opencart/system/storage/upload/');
-define('DIR_CATALOG', 'D:/dev/vans.opencart/catalog/');
+define('DIR_APPLICATION', 'D:/dev/opencart/vans.opencart/admin/');
+define('DIR_SYSTEM', 'D:/dev/opencart/vans.opencart/system/');
+define('DIR_IMAGE', 'D:/dev/opencart/vans.opencart/image/');
+define('DIR_LANGUAGE', 'D:/dev/opencart/vans.opencart/admin/language/');
+define('DIR_TEMPLATE', 'D:/dev/opencart/vans.opencart/admin/view/template/');
+define('DIR_CONFIG', 'D:/dev/opencart/vans.opencart/system/config/');
+define('DIR_CACHE', 'D:/dev/opencart/vans.opencart/system/storage/cache/');
+define('DIR_DOWNLOAD', 'D:/dev/opencart/vans.opencart/system/storage/download/');
+define('DIR_LOGS', 'D:/dev/opencart/vans.opencart/system/storage/logs/');
+define('DIR_MODIFICATION', 'D:/dev/opencart/vans.opencart/system/storage/modification/');
+define('DIR_UPLOAD', 'D:/dev/opencart/vans.opencart/system/storage/upload/');
+define('DIR_CATALOG', 'D:/dev/opencart/vans.opencart/catalog/');
 
 // DB
 define('DB_DRIVER', 'mysqli');
