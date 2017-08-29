@@ -316,12 +316,12 @@ class ControllerCommonHeader extends Controller
         }
 
 
-/*        echo '<pre>';
-        print_r($data['cart']);
-        echo '</pre>';
-
-
-        die();*/
+//        echo '<pre>';
+//        print_r($data['cart']);
+//        echo '</pre>';
+//
+//
+//        die();
 
         return $this->load->view('common/header', $data);
 

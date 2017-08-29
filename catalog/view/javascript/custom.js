@@ -250,8 +250,7 @@ $('.js-btn-buy').click(function(e) {
         if(response.success !== undefined) {
             getCartAddedNewProduct(data.product_id, function(productIncart) {
                 var product = productIncart.product;
-
-
+                $('#cartModal').find('#cart').load('common/header #cart')
             });
         }
     });
@@ -287,7 +286,8 @@ $(document).on('submit', '.jqs-send-form', function(e) {
                 productId = slitedInput[0].replace('products[', ''),
                 fieldName = slitedInput[1].replace(']', '');
 
-            if(data.products[productId] === undefined) data.products[productId] = {};
+            if(data.products[productId] === undefined)
+                data.products[productId] = {};
 
             data.products[productId][fieldName] = input.value;
         } else {
@@ -318,24 +318,54 @@ function addOrder(data, callback) {
 
 }
 
+function totalPrice() {
+    var $form = $('#cartModal'),
+        $items = $form.find('.prod-cart-row'),
+        $totalPriceSpan = $form.find('.total-price'),
+        $totalPriceInput = $form.find('.total-price-input'),
+        totalPrice = 0;
+
+    $items.each(function () {
+        var price = parseInt($(this).find('.prod-cart-price').html()),
+            count = parseInt($(this).find('.prod-cart-count').val());
+        totalPrice += price*count;
+    });
+    $totalPriceSpan.html(totalPrice + ' руб.');
+    $totalPriceInput.val(totalPrice);
+}
+
 $('.js-remove-item').on('click', function () {
    var $item = $(this).closest('.prod-cart-row'),
-       $allItems = $item.closest();
-
-    // $item.remove();
-
+       cart_id = $item.attr('data-cart-id');
+    $item.remove();
     $.ajax({
         url: 'index.php?route=checkout/cart/remove',
         type: 'post',
-        data: 'key=' + key,
-        dataType: 'json',
-
-        success: function(key) {
-        }
+        data: 'key=' + cart_id,
+        dataType: 'json'
     });
-
+    totalPrice();
 });
 
-var cart = {
 
-};
+$('.prod-cart-count').on('focusout', function () {
+    totalPrice();
+});
+
+$('.head-cart-link').on('click', function () {
+    totalPrice();
+});
+
+function customerValues() {
+    var $form = $('#cartModal'),
+        $customerName = $form.find('#input-name'),
+        $customerPhone = $form.find('#input-phone');
+    $customerName.on('focusout', function () {
+        $(this).value($(this.val()))
+    });
+    $customerPhone.on('focusout', function () {
+        $(this).value($(this.val()))
+    });
+}
+
+customerValues();

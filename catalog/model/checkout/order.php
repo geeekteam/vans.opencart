@@ -892,7 +892,7 @@ class ModelCheckoutOrder extends Model {
 
         // Product
         if (isset($data['product_name']) && isset($data['product_id'])) {
-            $this->db->query("INSERT INTO " . DB_PREFIX . "order_product SET order_id = '" . (int)$order_id . "', product_id = '" . (int)$data['product_id'] . "', name = '" . $this->db->escape($data['product_name']) . "', quantity = '1', price = '" . (float)$data['price'] . "', total = '" . (float)$data['price'] . "'");
+            $this->db->query("INSERT INTO " . DB_PREFIX . "order_product SET order_id = '" . (int)$order_id . "', product_id = '" . (int)$data['product_id'] . "', name = '" . $this->db->escape($data['product_name']) . "', quantity = '" . (float)$data['product_quantity'] . "', price = '" . (float)$data['product_price'] . "', total = '" . (float)$data['product_total_price'] . "'");
 
             $this->db->query("INSERT INTO " . DB_PREFIX . "order_history SET order_id = '" . (int)$order_id . "', order_status_id = '1', notify = '1'");
 

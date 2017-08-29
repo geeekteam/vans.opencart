@@ -1,58 +1,53 @@
-<div id="cart" class="btn-group btn-block">
-  <button type="button" data-toggle="dropdown" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-inverse btn-block btn-lg dropdown-toggle"><i class="fa fa-shopping-cart"></i> <span id="cart-total"><?php echo $text_items; ?></span></button>
-  <ul class="dropdown-menu pull-right">
-    <?php if ($products || $vouchers) { ?>
-    <li>
-      <table class="table table-striped">
-        <?php foreach ($products as $product) { ?>
-        <tr>
-          <td class="text-center"><?php if ($product['thumb']) { ?>
-            <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-thumbnail" /></a>
-            <?php } ?></td>
-          <td class="text-left"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
-            <?php if ($product['option']) { ?>
-            <?php foreach ($product['option'] as $option) { ?>
-            <br />
-            - <small><?php echo $option['name']; ?> <?php echo $option['value']; ?></small>
-            <?php } ?>
-            <?php } ?>
-            <?php if ($product['recurring']) { ?>
-            <br />
-            - <small><?php echo $text_recurring; ?> <?php echo $product['recurring']; ?></small>
-            <?php } ?></td>
-          <td class="text-right">x <?php echo $product['quantity']; ?></td>
-          <td class="text-right"><?php echo $product['total']; ?></td>
-          <td class="text-center"><button type="button" onclick="cart.remove('<?php echo $product['cart_id']; ?>');" title="<?php echo $button_remove; ?>" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button></td>
-        </tr>
-        <?php } ?>
-        <?php foreach ($vouchers as $voucher) { ?>
-        <tr>
-          <td class="text-center"></td>
-          <td class="text-left"><?php echo $voucher['description']; ?></td>
-          <td class="text-right">x&nbsp;1</td>
-          <td class="text-right"><?php echo $voucher['amount']; ?></td>
-          <td class="text-center text-danger"><button type="button" onclick="voucher.remove('<?php echo $voucher['key']; ?>');" title="<?php echo $button_remove; ?>" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button></td>
-        </tr>
-        <?php } ?>
-      </table>
-    </li>
-    <li>
-      <div>
-        <table class="table table-bordered">
-          <?php foreach ($totals as $total) { ?>
-          <tr>
-            <td class="text-right"><strong><?php echo $total['title']; ?></strong></td>
-            <td class="text-right"><?php echo $total['text']; ?></td>
-          </tr>
-          <?php } ?>
-        </table>
-        <p class="text-right"><a href="<?php echo $cart; ?>"><strong><i class="fa fa-shopping-cart"></i> <?php echo $text_cart; ?></strong></a>&nbsp;&nbsp;&nbsp;<a href="<?php echo $checkout; ?>"><strong><i class="fa fa-share"></i> <?php echo $text_checkout; ?></strong></a></p>
-      </div>
-    </li>
-    <?php } else { ?>
-    <li>
-      <p class="text-center"><?php echo $text_empty; ?></p>
-    </li>
-    <?php } ?>
-  </ul>
-</div>
+<?php foreach($cart as $cartItem) : ?>
+    <div class="prod-cart-row" data-cart-id="<?=$cartItem['cart_id']?>">
+        <input type="hidden" name="products[<?=$cartItem['product_id']; ?>][product_id]" value="<?=$cartItem['product_id']; ?>">
+        <input type="hidden" name="products[<?=$cartItem['product_id']; ?>][product_name]" value="<?=$cartItem['name']; ?>">
+        <input type="hidden" name="products[<?=$cartItem['product_id']; ?>][product_price]" value="<?=$cartItem['price']; ?>">
+        <input type="hidden" class="total-price-input" name="products[<?=$cartItem['product_id']; ?>][product_total_price]" value="">
+        <?php foreach($cartItem['option'] as $option) : ?>
+            <?php if($option['option_id'] == 13) : ?>
+                <input type="hidden" name="products[<?=$cartItem['product_id']; ?>][product_comment]" value="Размер: <?=$option['value']; ?>">
+            <?php endif; ?>
+        <?php endforeach; ?>
+        <div class="prod-cart-col t-col-1">
+            <span class="prod-cart-img"><img src="/image/<?=$cartItem['image']; ?>" alt=""></span>
+        </div>
+
+        <div class="prod-cart-col t-col-2">
+                            <span class="prod-cart-name">
+                              <span><?=$cartItem['name']; ?></span>
+                            </span>
+        </div>
+
+        <div class="prod-cart-col t-col-3">
+            <div class="prod-cart-select-wrapp">
+                <span class="prod-cart-label-select">Размер</span>
+                <select name="" id="">
+                    <?php foreach($cartItem['options'] as $option) : ?>
+                        <?php if($option['option_id'] == 13) : ?>
+                            <?php foreach($option['product_option_value'] as $optionValue) : ?>
+                                <?php $selectedOption = ($optionValue['product_option_value_id'] ==  $cartItem['option'][0]['product_option_value_id']) ? 'selected' : '';?>
+                                <option value="<?=$optionValue['product_option_value_id']; ?>" <?=$selectedOption;?>><?=$optionValue['name']; ?> </option>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+        </div>
+
+        <div class="prod-cart-col t-col-4">
+            <div class="prod-cart-select-wrapp">
+                <span class="prod-cart-label-select">Количество</span>
+                <input class="prod-cart-input prod-cart-count" type="text" name="products[<?=$cartItem['product_id']; ?>][product_quantity]" value="<?=$cartItem['quantity'];?>">
+            </div>
+        </div>
+
+        <div class="prod-cart-col t-col-5">
+            <span class="prod-cart-price"><?=$cartItem['total'];?> руб.</span>
+        </div>
+
+        <div class="prod-cart-col t-col-6">
+            <a href="#" class="icon icon-close js-remove-item"></a>
+        </div>
+    </div>
+<?php endforeach; ?>

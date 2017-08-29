@@ -67,7 +67,7 @@
                                     <?php $j++; endforeach;?>
                                 <?php endif;?>
                             <?php endforeach;?>
-                            <button class="jq-btn btn btn-lg btn-max" type="submit">КУПИТЬ</button>
+                            <button class="js-btn-buy btn btn-lg btn-max" type="submit">КУПИТЬ</button>
                         </form>
                         <div class="thanks js-thanks">
                             <h3>Спасибо за покупку!</h3>
