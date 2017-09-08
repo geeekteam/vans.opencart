@@ -3,11 +3,26 @@ class ControllerCommonContentTop extends Controller {
 	public function index() {
 		$this->load->model('design/layout');
 
+        $data['custom_reviews'] = array();
+
 		if (isset($this->request->get['route'])) {
 			$route = (string)$this->request->get['route'];
 		} else {
 			$route = 'common/home';
 		}
+
+        // Reviews
+        $filter_data = array(
+            'filter_category_id' => 1,
+        );
+
+        $this->load->model('newsblog/article');
+        $this->load->model('newsblog/category');
+
+        $data['custom_reviews'] = array(
+            'text' => $this->model_newsblog_article->getArticles($filter_data)
+        );
+        // End of reviews
 
 		$layout_id = 0;
 

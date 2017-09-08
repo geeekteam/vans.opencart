@@ -121,7 +121,7 @@ echo $header;
                         <?php endforeach;?>
                     </div>
                 </div>
-                <button class="js-btn-buy btn btn-lg btn-max" type="button">КУПИТЬ</button>
+                <a class="js-btn-buy btn btn-lg btn-max">КУПИТЬ</a>
                 <ul class="card-info-service">
                     <li>
                         <i class="icon icon-card"></i>

@@ -50,7 +50,7 @@ class ControllerExtensionModuleCategoryproducts extends Controller {
                 'order' => 'DESC',
                 'start' => 0,
                 'filter_category_id'=>$product_id,
-                'limit' => $limit
+                'limit' => $limit,
             );
 
             $results = $this->model_catalog_product->getProducts($filter_data);
@@ -60,6 +60,7 @@ class ControllerExtensionModuleCategoryproducts extends Controller {
             $results = array_slice($results, ($page - 1) * $setting['limit'], $setting['limit']);
 
             $data['maxPage'] = ceil($product_total / $setting['limit']);
+
 
             if ($results) {
                 foreach ($results as $result) {
@@ -105,7 +106,28 @@ class ControllerExtensionModuleCategoryproducts extends Controller {
                         'rating' => $rating,
                         'href' => $this->url->link('product/product', 'product_id=' . $result['product_id'])
                     );
+
+                    $url = '';
+
+                    if (isset($this->request->get['filter'])) {
+                        $url .= '&filter=' . $this->request->get['filter'];
+                    }
+
+                    if (isset($this->request->get['sort'])) {
+                        $url .= '&sort=' . $this->request->get['sort'];
+                    }
+
+                    if (isset($this->request->get['order'])) {
+                        $url .= '&order=' . $this->request->get['order'];
+                    }
+
+                    if (isset($this->request->get['limit'])) {
+                        $url .= '&limit=' . $this->request->get['limit'];
+                    }
+
+                    $data['category_href'] = $this->url->link('product/category', 'path=' . $filter_data['filter_category_id'] . $url);
                 }
+
                 return $this->load->view('extension/module/categoryproducts', $data);
             }
         }

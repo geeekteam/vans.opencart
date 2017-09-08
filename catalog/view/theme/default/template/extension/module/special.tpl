@@ -30,7 +30,7 @@
                             </div>
                         </div>
 
-                        <form action="/" method="post" class="main-banner-buy jq-send-form" data-form-type="main-banner">
+                        <form action="/" method="post" class="main-banner-buy jqs-send-main-form" data-form-type="main-banner">
                             <?php if($product['name']): ?>
                             <span class="m-banner-prod-tt">
                                 <?=$product['name'];?>
@@ -38,11 +38,11 @@
                             <?php endif; ?>
                             <div class="form-group form-group-icon">
                                 <i class="icon icon-inp-user"></i>
-                                <input type="text" placeholder="Ваше имя" name="firstname">
+                                <input id="input-name" type="text" placeholder="Ваше имя" name="firstname">
                             </div>
                             <div class="form-group form-group-icon">
                                 <i class="icon icon-inp-phone"></i>
-                                <input type="text" placeholder="Ваш телефон" class="mask-phone" name="telephone">
+                                <input id="input-phone" type="text" placeholder="Ваш телефон" class="mask-phone" name="telephone">
                             </div>
                             <div class="form-group-size">
                                 <span class="form-label-min">Размер (RUS)</span>
@@ -57,17 +57,10 @@
                                     <?php endif;?>
                                 <?php endforeach;?>
                             </div>
-                            <input type="hidden" name="[<?php echo $product['name']; ?>][product_name]" value="<?php echo $product['name']; ?>">
-                            <input type="hidden" name="[<?=str_replace('.00 р.', '', $product['special']);?>][product_price]" value="<?=str_replace('.00 р.', '', $product['special']);?> руб.">
-                            <input type="hidden" name="[<?php echo $product['product_id']; ?>][product_id]" value="<?php echo $product['product_id']; ?>">
-                            <?php foreach($product['options'] as $option):?>
-                                <?php if($option['option_id'] == 13): ?>
-                                    <?php $j = 0; foreach(($option['product_option_value']) as $sizes):?>
-                                        <input type="hidden" name="[<?php echo $sizes['name']; ?>][product_size]" value="<?php echo $sizes['name']; ?>">
-                                    <?php $j++; endforeach;?>
-                                <?php endif;?>
-                            <?php endforeach;?>
-                            <button class="js-btn-buy btn btn-lg btn-max" type="submit">КУПИТЬ</button>
+                            <input type="hidden" name="products[<?=$product['product_id']; ?>][product_id]" value="<?=$product['product_id']; ?>">
+                            <input type="hidden" name="products[<?=$product['product_id']; ?>][product_name]" value="<?=$product['name']; ?>">
+                            <input type="hidden" name="products[<?=$product['product_id']; ?>][product_price]" value="<?=$product['special']; ?>">
+                            <button class="btn btn-lg btn-max" type="submit">КУПИТЬ</button>
                         </form>
                         <div class="thanks js-thanks">
                             <h3>Спасибо за покупку!</h3>

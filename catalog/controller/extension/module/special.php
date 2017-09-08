@@ -58,6 +58,12 @@ class ControllerExtensionModuleSpecial extends Controller {
 					$rating = false;
 				}
 
+                if (isset($this->request->get['filter'])) {
+                    $filter = $this->request->get['filter'];
+                } else {
+                    $filter = false;
+                }
+
 				$data['products'][] = array(
 					'product_id'  => $result['product_id'],
 					'thumb'       => $image,

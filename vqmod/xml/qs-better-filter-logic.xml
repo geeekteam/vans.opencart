@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<id><![CDATA[QS Better Lists]]></id>
+	<version><![CDATA[1.0]]></version>
+	<vqmver><![CDATA[2.4.1]]></vqmver>
+	<author><![CDATA[Timothy Coxon - QuirkySites.co.uk]]></author>
+	<!-- 
+	LICENCE: 
+		This work is licensed under a Creative Commons Attribution 4.0 International License.
+	
+	DESCRIPTION:
+		Improves the logic of the default filter module in OpenCart.
+		
+		This is a VQMod of the code listed here: http://stackoverflow.com/questions/23612590/changing-the-filtering-behavior-in-opencart
+		
+		There are additional changes to allow for pagination to work.
+		
+	VERSION HISTORY:
+		1.0.0 - Initial Release - Improves functionality of Filter Module from default OpenCart
+	-->
+	<file name="catalog/model/catalog/product.php">
+		<operation info="">
+			<search position="after"><![CDATA[public function getProducts($data = array()) {]]></search>
+			<add><![CDATA[
+				$validimi = false;
+				$filter_groups = array();
+			]]></add>
+		</operation>
+		<operation info="">
+			<search position="after"><![CDATA[public function getTotalProducts($data = array()) {]]></search>
+			<add><![CDATA[
+				$validimi = false;
+				$filter_groups = array();
+			]]></add>
+		</operation>
+		<operation info="">
+			<search position="before"><![CDATA[$sql .= " AND pf.filter_id IN (" . implode(',', $implode) . ")";]]></search>
+			<add><![CDATA[
+				$sql_check = "SELECT DISTINCT (filter_group_id) FROM  " . DB_PREFIX . "filter WHERE filter_id IN (" . implode(',', $implode) . ") ";    
+				$query_check = $this->db->query($sql_check);
+				$filter_groups = array();
+				foreach ($query_check->rows as $result) {
+					$filter_groups[$result['filter_group_id']] = array();
+				}
+
+				if(count($filter_groups) > 1){
+					$validimi = true;               
+				}else{
+					$validimi = false;
+				}
+			]]></add>
+		</operation>
+		<operation info="">
+			<search position="replace"><![CDATA[$sql .= " GROUP BY p.product_id";]]></search>
+			<add><![CDATA[
+				if( $validimi ) {
+					$sql .= "GROUP BY p.product_id HAVING COUNT( DISTINCT pf.filter_id)=".count($filter_groups);
+				} else {
+					$sql .= " GROUP BY p.product_id";
+				}
+			]]></add>
+		</operation>
+		<operation info="">
+			<search position="after" offset="2" index="2"><![CDATA[$sql .= " AND p.manufacturer_id = '" . (int)$data['filter_manufacturer_id'] . "'";]]></search>
+			<add><![CDATA[  
+				if( $validimi ) {
+					$sql .= "GROUP BY p.product_id HAVING COUNT( DISTINCT pf.filter_id)=".count($filter_groups);
+				}
+			]]></add>
+		</operation>
+		
+	</file>
+</modification>

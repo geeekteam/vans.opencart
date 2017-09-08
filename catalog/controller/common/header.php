@@ -4,6 +4,7 @@ class ControllerCommonHeader extends Controller
 {
     public function index()
     {
+
         $this->load->language('common/cart');
 
         // Totals
@@ -313,6 +314,7 @@ class ControllerCommonHeader extends Controller
 
         foreach ($data['cart'] as $key => $dataCart) {
             $data['cart'][$key]['options'] = $this->model_catalog_product->getProductOptions($dataCart['product_id']);
+            $data['product_quantity'] = $this->model_catalog_product->getProduct($dataCart['product_id'])['quantity'];
         }
 
 
@@ -325,5 +327,9 @@ class ControllerCommonHeader extends Controller
 
         return $this->load->view('common/header', $data);
 
+    }
+
+    public function info() {
+        $this->response->setOutput($this->index());
     }
 }

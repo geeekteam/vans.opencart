@@ -127,93 +127,6 @@ var $sendForm = $('.js-send-form'),
     $thanksModal = $('.thanks-modal'),
     $closeThanksBtn = $('.js-close-thanks');
 
-/*$sendForm.each(function () {
- var $this = $(this);
- if ($this.data('form-type') === 'main-banner') {
- $this.submit(function (t) {
- t.preventDefault();
- var $cphone = $this.find('.js-phone'),
- $cname = 'Заказ товара от: ' + $this.find('.js-name').val(),
- $title = $this.find('.js-title').val(),
- $price = $this.find('.js-price').val(),
- $size = $this.find('.js-size[type=radio]:checked').attr('data-size'),
- $productId = $this.find('.js-product-id').val(),
- $button = $this.find('.js-btn');
- if (validatePhone($cphone.val()) == true) {
- $cphone.removeAttr('style');
- var order = 'cphone=' + $cphone.val() + '&iname=' + $cname + '&ititle=' + $title + '&iprice=' + $price + '&ipriceTotal=' + $price + '&prid=' + $productId + '&isize=' + $size;
- $.ajax({
- url: 'index.php?route=checkout/cart/addorder',
- type: 'post',
- data: order,
- dataType: 'json',
- beforeSend: function () {
- $button.text('Отправка...');
- },
- complete: function () {
- $button.text('Купить');
- },
- success: function (json) {
- if (json['error']) {
- if (json['error']['phone']) {
- $cphone.css('border', '1px solid red');
- }
- }
- $cphone.removeAttr('style');
- $this.addClass('hidden');
- $thanks.addClass('active');
- }
- });
- } else {
- $cphone.css('border', '1px solid red');
- }
- })
- }
-
- if ($this.data('form-type') === 'modal-call') {
- $this.submit(function (t) {
- t.preventDefault();
- var $cphone = $this.find('.js-phone'),
- $cname = 'Заказ звонка от: ' + $this.find('.js-name').val(),
- $button = $this.find('.js-btn');
- if (validatePhone($cphone.val()) == true) {
- $cphone.removeAttr('style');
- var order = 'cphone=' + $cphone.val() + '&iname=' + $cname;
- $.ajax({
- url: 'index.php?route=checkout/cart/addorder',
- type: 'post',
- data: order,
- dataType: 'json',
- beforeSend: function () {
- $button.text('Отправка...');
- },
- complete: function () {
- $button.text('Оформить');
- },
- success: function (json) {
- if (json['error']) {
- if (json['error']['phone']) {
- $cphone.css('border', '1px solid red');
- }
- }
- $cphone.removeAttr('style');
- $.magnificPopup.close();
- $.magnificPopup.open({
- items: {
- src: '#thanksModal',
- type: 'inline'
- }
- })
- }
- });
- } else {
- $cphone.css('border', '1px solid red');
- }
- })
- }
- });*/
-
-
 $closeThanksBtn.click(function () {
     $thanks.removeClass('active');
     $sendForm.removeClass('hidden');
@@ -225,11 +138,15 @@ var getCartAddedNewProduct = function($product_id, callback) {
     });
 };
 
-$('.js-btn-buy').click(function(e) {
+var $basketCountProducts = $('.js-basket-count-products'),
+    productsCountInCart = $('#cartModal').find('.js-prod-cart-item').length;
+
+$(document).on('click', '.js-btn-buy', function (e) {
     e.preventDefault();
 
     var $buyBtn = $(this),
-        $form = $buyBtn.closest('form');
+        $form = $buyBtn.closest('form'),
+        $itemsCount = $('.head-cart-value');
 
     var data = {
         option: {}
@@ -250,10 +167,28 @@ $('.js-btn-buy').click(function(e) {
         if(response.success !== undefined) {
             getCartAddedNewProduct(data.product_id, function(productIncart) {
                 var product = productIncart.product;
-                $('#cartModal').find('#cart').load('common/header #cart')
+                $('#cartModal').find('#cart').load('?route=common/header/info .js-prod-cart-item');
+                setTimeout(function () {
+                    $.magnificPopup.open({
+                        items: {
+                            src: '#cartModal'
+                        },
+                        callbacks: {
+                            beforeOpen: function () {
+                                var itemsCount = $('#cartModal').find('.js-prod-cart-item').length;
+                                $itemsCount.html(itemsCount);
+                            }
+                        }
+                    });
+                    jcf.replaceAll();
+                    totalPrice();
+                    if ($('.head-cart').hasClass('hidden'))
+                        $('.head-cart').removeClass('hidden');
+                }, 250)
             });
         }
     });
+
 });
 
 $(document).on('submit', '.jq-send-form', function(e) {
@@ -274,35 +209,85 @@ $(document).on('submit', '.jq-send-form', function(e) {
     });
 });
 
-$(document).on('submit', '.jqs-send-form', function(e) {
+$(document).on('submit', '.jqs-send-form', function (e) {
     e.preventDefault();
     var $form = $(this),
-        data = {products: {}};
+        data = {products: {}},
+        $phone = $form.find('#input-phone');
 
+    productSize();
+    if (validatePhone($phone.val()) === true) {
+        $phone.css('border', 'none');
+        $.each($form.serializeArray(), function (index, input) {
+            if (input.name.indexOf('products[') > -1) {
+                var slitedInput = input.name.split(']['),
+                    productId = slitedInput[0].replace('products[', ''),
+                    fieldName = slitedInput[1].replace(']', '');
 
-    $.each($form.serializeArray(), function (index, input) {
-        if(input.name.indexOf('products[') > -1) {
-            var slitedInput = input.name.split(']['),
-                productId = slitedInput[0].replace('products[', ''),
-                fieldName = slitedInput[1].replace(']', '');
+                if (data.products[productId] === undefined)
+                    data.products[productId] = {};
 
-            if(data.products[productId] === undefined)
-                data.products[productId] = {};
+                data.products[productId][fieldName] = input.value;
+            } else {
+                data[input.name] = input.value;
+            }
+        });
 
-            data.products[productId][fieldName] = input.value;
-        } else {
-            data[input.name] = input.value;
-        }
+        addOrder(data, function (response) {
+            // console.log(response);
+        });
 
-    });
+        $.magnificPopup.close({
+            items: {
+                src: '#cartModal'
+            }
+        });
+        $.magnificPopup.open({
+            items: {
+                src: '#thanksModal'
+            }
+        });
+        clearForm();
+    } else {
+        $phone.css('border', '1px solid red');
+    }
+});
 
-    console.log(data);
+$(document).on('submit', '.jqs-send-main-form', function (e) {
+    e.preventDefault();
+    var $form = $(this),
+        data = {products: {}},
+        $phone = $form.find('#input-phone');
+    productSize();
+    if (validatePhone($phone.val()) === true) {
+        $phone.css('border', 'none');
+        $.each($form.serializeArray(), function (index, input) {
+            if (input.name.indexOf('products[') > -1) {
+                var slitedInput = input.name.split(']['),
+                    productId = slitedInput[0].replace('products[', ''),
+                    fieldName = slitedInput[1].replace(']', '');
 
-    addOrder(data, function(response) {
-        console.log(response);
-    });
+                if (data.products[productId] === undefined)
+                    data.products[productId] = {};
 
+                data.products[productId][fieldName] = input.value;
+            } else {
+                data[input.name] = input.value;
+            }
+        });
 
+        addOrder(data, function (response) {
+            console.log(response);
+        });
+
+        console.log(data);
+
+        $form.addClass('hidden');
+        $('.js-thanks').css('display','block');
+        clearForm();
+    } else {
+        $phone.css('border', '1px solid red');
+    }
 });
 
 function addOrder(data, callback) {
@@ -318,9 +303,56 @@ function addOrder(data, callback) {
 
 }
 
+function clearForm() {
+    var $form = $('#cartModal');
+
+    $form.find('.js-prod-cart-item').each(function () {
+        var cart_id = $(this).attr('data-cart-id');
+        $.ajax({
+            url: 'index.php?route=checkout/cart/remove',
+            type: 'post',
+            data: 'key=' + cart_id,
+            dataType: 'json',
+            success: function () {
+                $basketCountProducts.html(0);
+            }
+        });
+        $form.find('input').val('');
+        $(this).remove();
+        if (!$('.head-cart').hasClass('hidden'))
+            $('.head-cart').addClass('hidden');
+    });
+}
+
+$(document).on('click', '.js-close-thanks', function () {
+    var $form = $('.jqs-send-main-form'),
+        $thanks = $('.js-thanks');
+
+    $thanks.css('display', 'none');
+    console.log($form);
+    $form.find('input').val('');
+    $form.find('.jcf-radio').removeClass('jcf-checked');
+    $form.find('.jcf-radio').addClass('jcf-unchecked');
+    $form.find('.jq-product-size-label').removeClass('jcf-label-active');
+    $form.removeClass('hidden');
+});
+
+function productSize() {
+    var $form = $('#cartModal'),
+        $items = $form.find('.js-prod-cart-item');
+    $items.each(function () {
+        var currentSize = $(this).find('.js-select-size .jcf-select-text span').html(),
+            inputSize = $(this).find('.js-hidden-input-product-size'),
+            giveSome = $(this).find('.js-give-some .jcf-label-active').html(),
+            inputGiveSome = $(this).find('.js-hidden-input-give-some');
+        inputSize.val(currentSize);
+        inputGiveSome.val(giveSome);
+    });
+}
+
 function totalPrice() {
     var $form = $('#cartModal'),
-        $items = $form.find('.prod-cart-row'),
+        $items = $form.find('.js-prod-cart-item'),
         $totalPriceSpan = $form.find('.total-price'),
         $totalPriceInput = $form.find('.total-price-input'),
         totalPrice = 0;
@@ -334,16 +366,71 @@ function totalPrice() {
     $totalPriceInput.val(totalPrice);
 }
 
-$('.js-remove-item').on('click', function () {
-   var $item = $(this).closest('.prod-cart-row'),
-       cart_id = $item.attr('data-cart-id');
-    $item.remove();
-    $.ajax({
-        url: 'index.php?route=checkout/cart/remove',
-        type: 'post',
-        data: 'key=' + cart_id,
-        dataType: 'json'
+function removeItem(item) {
+    var cart_id = item.attr('data-cart-id'),
+        itemsCount = $('#cartModal').find('.js-prod-cart-item').length;
+    if (itemsCount > 1) {
+            item.remove();
+            $.ajax({
+                url: 'index.php?route=checkout/cart/remove',
+                type: 'post',
+                data: 'key=' + cart_id,
+                dataType: 'json',
+                success: function () {
+                    $basketCountProducts.html(itemsCount - 1);
+                }
+            });
+        // Удалить товар из списка и закрыть корзину, если товар единственный
+    } else if (itemsCount === 1) {
+        $.magnificPopup.close({
+            items: {
+                src: '#cartModal'
+            }
+        });
+        $.ajax({
+            url: 'index.php?route=checkout/cart/remove',
+            type: 'post',
+            data: 'key=' + cart_id,
+            dataType: 'json',
+            success: function () {
+                $basketCountProducts.html(itemsCount - 1);
+                item.remove();
+                if (!$('.head-cart').hasClass('hidden'))
+                    $('.head-cart').addClass('hidden');
+            }
+        });
+    }
+}
+
+function totalPrice() {
+    var $form = $('#cartModal'),
+        $items = $form.find('.js-prod-cart-item'),
+        $totalPriceSpan = $form.find('.js-total-price'),
+        $totalPriceInput = $form.find('.js-total-price-input'),
+        totalPrice = 0;
+
+    $items.each(function () {
+        var price = parseInt($(this).find('.js-item-price').html()),
+            count = parseInt($(this).find('.js-item-count').val());
+        totalPrice += price;
     });
+    $totalPriceSpan.html(totalPrice + ' <span class="rubl"> </span>');
+    $totalPriceInput.val(totalPrice);
+}
+
+function itemPrice(item) {
+    var count = item.find('.js-item-count').val(),
+        priceSpan = item.find('.js-item-price'),
+        price = item.find('.js-hidden-input-item-price').val(),
+        totalPrice = 0;
+    totalPrice += count * price;
+    priceSpan.html(totalPrice + ' <span class="rubl"> </span>')
+}
+
+$(document).on('click', '.js-remove-item', function () {
+    var $item = $(this).closest('.js-prod-cart-item');
+    itemPrice($item);
+    removeItem($item);
     totalPrice();
 });
 
@@ -356,7 +443,7 @@ $('.head-cart-link').on('click', function () {
     totalPrice();
 });
 
-function customerValues() {
+/*function customerValues() {
     var $form = $('#cartModal'),
         $customerName = $form.find('#input-name'),
         $customerPhone = $form.find('#input-phone');
@@ -366,6 +453,6 @@ function customerValues() {
     $customerPhone.on('focusout', function () {
         $(this).value($(this.val()))
     });
-}
+}*/
 
-customerValues();
+// customerValues();

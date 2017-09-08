@@ -45,7 +45,7 @@
         </div>
     </div>
 
-    <form id="cartModal" class="cart-modal mfp-hide jqs-send-form">
+    <form action="#" id="cartModal" class="cart-modal mfp-hide jqs-send-form">
         <div class="cart-modal-inner">
             <div class="service-icon-flex">
                 <div class="service-icon-item">
@@ -100,11 +100,13 @@
 
             <div class="prod-cart-table" id="cart">
                 <?php foreach($cart as $cartItem) : ?>
-                    <div class="prod-cart-row" data-cart-id="<?=$cartItem['cart_id']?>">
-                        <input type="hidden" name="products[<?=$cartItem['product_id']; ?>][product_id]" value="<?=$cartItem['product_id']; ?>">
+                    <div class="prod-cart-row js-prod-cart-item" data-cart-id="<?=$cartItem['cart_id']?>">
+                        <input class="js-product-id" type="hidden" name="products[<?=$cartItem['product_id']; ?>][product_id]" value="<?=$cartItem['product_id']; ?>">
                         <input type="hidden" name="products[<?=$cartItem['product_id']; ?>][product_name]" value="<?=$cartItem['name']; ?>">
-                        <input type="hidden" name="products[<?=$cartItem['product_id']; ?>][product_price]" value="<?=$cartItem['price']; ?>">
-                        <input type="hidden" class="total-price-input" name="products[<?=$cartItem['product_id']; ?>][product_total_price]" value="">
+                        <input class="js-hidden-input-item-price" type="hidden" name="products[<?=$cartItem['product_id']; ?>][product_price]" value="<?=$cartItem['price']; ?>">
+                        <input type="hidden" class="js-hidden-input-product-size" name="products[<?=$cartItem['product_id']; ?>][product_size]">
+                        <input type="hidden" class="js-hidden-input-give-some" name="products[<?=$cartItem['product_id']; ?>][give_some]">
+                        <input type="hidden" class="js-hidden-input-product-quantity" value="<?=$product_quantity;?>">
                         <?php foreach($cartItem['option'] as $option) : ?>
                             <?php if($option['option_id'] == 13) : ?>
                                 <input type="hidden" name="products[<?=$cartItem['product_id']; ?>][product_comment]" value="Размер: <?=$option['value']; ?>">
@@ -230,16 +232,19 @@
                         <span class="logo-slogan"><?=$name;?></span>
                     </div>
                 <?php endif; ?>
-<!--                --><?php //if(isset($cartItem)):?>
+                <?php if (count($cart)<1): ?>
+                    <div class="head-cart hidden">
+                <?php else: ?>
                     <div class="head-cart">
+                <?php endif; ?>
                         <a href="#cartModal" class="head-cart-link open-modal">
                             <svg class="icon icon-bag">
                                 <use xlink:href="/image/svg/sprite_svg.svg#icon-bag"></use>
                             </svg>
-                            <span class="head-cart-value"><?=count($cart);?></span>
+                            <span class="head-cart-value js-basket-count-products"><?=count($cart);?></span>
                         </a>
                     </div>
-<!--                --><?php //endif; ?>
+
                 <div class="head-search hidden-mobile">
                     <svg class="icon h-search">
                         <use xlink:href="/image/svg/sprite_svg.svg#search-icon"></use>

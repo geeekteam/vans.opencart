@@ -6,13 +6,12 @@ class ControllerProductProduct extends Controller {
 
 		$this->load->language('product/product');
 
-
-        // Отзывы
+        // Отзывы start
 
         $data['custom_reviews'] = array();
 
         $filter_data = array(
-            'filter_category_id' => 2,
+            'filter_category_id' => 1,
         );
 
         $this->load->model('newsblog/article');
@@ -22,7 +21,7 @@ class ControllerProductProduct extends Controller {
             'text' => $this->model_newsblog_article->getArticles($filter_data)
         );
 
-        // Отзывы
+        // Отзывы end
 
 		$data['breadcrumbs'] = array();
 
@@ -177,6 +176,8 @@ class ControllerProductProduct extends Controller {
 
 		$product_info = $this->model_catalog_product->getProduct($product_id);
 
+        $data['quantity'] = $this->model_catalog_product->getProduct($product_id)['quantity'];
+
 		if ($product_info) {
 			$url = '';
 
@@ -227,6 +228,7 @@ class ControllerProductProduct extends Controller {
 			if (isset($this->request->get['limit'])) {
 				$url .= '&limit=' . $this->request->get['limit'];
 			}
+
 
 			$data['breadcrumbs'][] = array(
 				'text' => $product_info['name'],
@@ -555,6 +557,7 @@ class ControllerProductProduct extends Controller {
 			$data['content_bottom'] = $this->load->controller('common/content_bottom');
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
+            $data['sku'] = $product_info['sku'];
 
 			$this->response->setOutput($this->load->view('product/product', $data));
 		} else {
@@ -631,6 +634,7 @@ class ControllerProductProduct extends Controller {
 			$data['content_bottom'] = $this->load->controller('common/content_bottom');
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
+            $data['sku'] = $product_info['sku'];
 
 			$this->response->setOutput($this->load->view('error/not_found', $data));
 		}

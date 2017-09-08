@@ -6,6 +6,11 @@
   padding: 0 1px;
 }
 
+input:active, input:focus {
+  background: white;
+  border: 1px solid #d9d9d9;
+}
+
 .review {
   display: flex;
   width: 90%;
