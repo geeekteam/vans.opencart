@@ -446,10 +446,8 @@ class ControllerCheckoutConfirm extends Controller {
             $product['telephone'] = $telephone;
             $product['total_price'] = $total_price;
             $product['delivery_type'] = $delivery_type;
+            $give_some = $product['give_some'];
             $this->model_checkout_order->insertOrder($product);
-
-
-            //start
 
             $product_db_quantity = $this->model_catalog_product->getProduct($product['product_id'])['quantity'];
 
@@ -457,24 +455,11 @@ class ControllerCheckoutConfirm extends Controller {
             if ($product_db_quantity <= 0) {
                 $product_db_quantity = 19;
             }
-
-
-//            $new_product_data['product_id'] = $product['product_id'];
             $new_product_data[] = array(
                 'product_id' => $product['product_id'],
-                'quantity' => $product_db_quantity
+                'quantity' => $product_db_quantity,
             );
 
-
-
-//
-
-
-
-            //end
-
-
-            $give_some = $product['give_some'];
             if ($give_some != "") :
                 $product_data .= "<p style='margin-top: 0;'>" . $product['product_name'] . ", цена: " . $product['product_price'] . " руб." . ", количество: " . $product['product_quantity'] . $give_some . "</p>" . "</br>";
             else:
@@ -511,23 +496,23 @@ class ControllerCheckoutConfirm extends Controller {
             "</tr>" .
             "</table>";
 
-//        $mail = new Mail();
-//        $mail->protocol = $this->config->get('config_mail_protocol');
-//        $mail->parameter = $this->config->get('config_mail_parameter');
-//        $mail->smtp_hostname = $this->config->get('config_mail_smtp_hostname');
-//        $mail->smtp_username = $this->config->get('config_mail_smtp_username');
-//        $mail->smtp_password = html_entity_decode($this->config->get('config_mail_smtp_password'), ENT_QUOTES, 'UTF-8');
-//        $mail->smtp_port = $this->config->get('config_mail_smtp_port');
-//        $mail->smtp_timeout = $this->config->get('config_mail_smtp_timeout');
-//
-//        $mail->setTo($this->config->get('config_email'));
-//        $mail->setFrom($this->config->get('config_email'));
-//        $mail->setSender("UGG");
-//        $mail->setSubject("Новый заказ");
-//
-//        $mail->setHtml($message);
-//
-//        $mail->send();
+        $mail = new Mail();
+        $mail->protocol = $this->config->get('config_mail_protocol');
+        $mail->parameter = $this->config->get('config_mail_parameter');
+        $mail->smtp_hostname = $this->config->get('config_mail_smtp_hostname');
+        $mail->smtp_username = $this->config->get('config_mail_smtp_username');
+        $mail->smtp_password = html_entity_decode($this->config->get('config_mail_smtp_password'), ENT_QUOTES, 'UTF-8');
+        $mail->smtp_port = $this->config->get('config_mail_smtp_port');
+        $mail->smtp_timeout = $this->config->get('config_mail_smtp_timeout');
+
+        $mail->setTo($this->config->get('config_email'));
+        $mail->setFrom($this->config->get('config_email'));
+        $mail->setSender("UGG");
+        $mail->setSubject("Новый заказ");
+
+        $mail->setHtml($message);
+
+        $mail->send();
 
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($order_datas));

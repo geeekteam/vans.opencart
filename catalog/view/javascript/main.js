@@ -24,7 +24,7 @@ jQuery(function($){
   $('ul.tabs').on('click', 'li:not(.current)', function() {
     $(this).addClass('current').siblings().removeClass('current')
       .parents('div.section').find('div.box').eq($(this).index()).fadeIn(150).siblings('div.box').hide();
-  })
+  });
 
 
   // add-open-class
@@ -50,7 +50,9 @@ jQuery(function($){
      zoomstart: 2,
      innerzoom: true,
      magnifierborder: "none",
-     magnifierspeedanimate: 250
+     magnifierspeedanimate: 250,
+     loopspeedanimate: 1,
+     scrollspeedanimate: 1
   });
 
 

@@ -303,6 +303,53 @@ function addOrder(data, callback) {
 
 }
 
+$(document).on('submit', '.jqs-feedback-form', function (e) {
+    e.preventDefault();
+    var $form = $(this),
+        data = {},
+        $name = $form.find('#input-name'),
+        $phone = $form.find('#input-phone');
+
+    if (validatePhone($phone.val()) === true) {
+        $phone.css('border', 'none');
+
+        data['firstname'] = $name.val();
+        data['telephone'] = $phone.val();
+
+        sendFeedback(data, function (response) {
+            // console.log(response);
+        });
+
+        $.magnificPopup.close({
+            items: {
+                src: '#feedback'
+            }
+        });
+        $.magnificPopup.open({
+            items: {
+                src: '#thanksModal'
+            }
+        });
+
+        clearFeedbackForm();
+    } else {
+        $phone.css('border', '1px solid red');
+    }
+});
+
+function sendFeedback(data, callback) {
+    var $form = $('.jqs-feeback-form');
+    $.ajax({
+        url: 'index.php?route=checkout/confirm/sendFeedback',
+        type: 'post',
+        data: data,
+        dataType: 'json',
+        success: function (response) {
+            callback(response);
+        }
+    });
+}
+
 function clearForm() {
     var $form = $('#cartModal');
 
@@ -329,7 +376,6 @@ $(document).on('click', '.js-close-thanks', function () {
         $thanks = $('.js-thanks');
 
     $thanks.css('display', 'none');
-    console.log($form);
     $form.find('input').val('');
     $form.find('.jcf-radio').removeClass('jcf-checked');
     $form.find('.jcf-radio').addClass('jcf-unchecked');
@@ -408,13 +454,12 @@ function totalPrice() {
         $totalPriceSpan = $form.find('.js-total-price'),
         $totalPriceInput = $form.find('.js-total-price-input'),
         totalPrice = 0;
-
     $items.each(function () {
         var price = parseInt($(this).find('.js-item-price').html()),
             count = parseInt($(this).find('.js-item-count').val());
         totalPrice += price;
     });
-    $totalPriceSpan.html(totalPrice + ' <span class="rubl"> </span>');
+    $totalPriceSpan.html(totalPrice + ' руб.');
     $totalPriceInput.val(totalPrice);
 }
 
@@ -424,7 +469,7 @@ function itemPrice(item) {
         price = item.find('.js-hidden-input-item-price').val(),
         totalPrice = 0;
     totalPrice += count * price;
-    priceSpan.html(totalPrice + ' <span class="rubl"> </span>')
+    priceSpan.html(totalPrice + ' руб. ')
 }
 
 $(document).on('click', '.js-remove-item', function () {
@@ -436,6 +481,8 @@ $(document).on('click', '.js-remove-item', function () {
 
 
 $('.prod-cart-count').on('focusout', function () {
+    var $item = $(this).closest('.js-prod-cart-item');
+    itemPrice($item);
     totalPrice();
 });
 

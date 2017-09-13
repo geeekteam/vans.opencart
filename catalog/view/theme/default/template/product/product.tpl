@@ -72,6 +72,7 @@ echo $header;
             <?php $i = 0; foreach ($breadcrumbs as $breadcrumb): ?>
                 <?php if ($i == 0):?>
                     <li><a href="/">Главная</a></li>
+                    <li><a href="<?php echo $category_href ?>"><?php echo $category ?></a></li>
                 <?php elseif ($last_elem !== $breadcrumb): ?>
                     <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
                 <?php elseif ($last_elem == $breadcrumb): ?>

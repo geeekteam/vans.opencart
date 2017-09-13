@@ -178,6 +178,16 @@ class ControllerProductProduct extends Controller {
 
         $data['quantity'] = $this->model_catalog_product->getProduct($product_id)['quantity'];
 
+        $categories = $this->model_catalog_product->getCategories($product_id);
+
+        if ($categories) {
+            $categories_info = $this->model_catalog_category->getCategory($categories[0]['category_id']);
+        }
+
+        $data['category'] = $categories_info['name'];
+
+        $data['category_href'] = $this->url->link('product/category', 'path=' . $categories_info['category_id']);
+
 		if ($product_info) {
 			$url = '';
 

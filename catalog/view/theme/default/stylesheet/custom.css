@@ -143,3 +143,8 @@ input:active, input:focus {
   font-weight: bold;
   text-align: center;
 }
+
+.call-modal .modal-contacts-form {
+  display: flex;
+  flex-direction: column;
+}

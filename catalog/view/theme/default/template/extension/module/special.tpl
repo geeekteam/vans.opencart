@@ -64,7 +64,7 @@
                         </form>
                         <div class="thanks js-thanks">
                             <h3>Спасибо за покупку!</h3>
-                            <p>Наш менеджер сейчас Вам перезвонит</p>
+                            <p>Приветливый менеджер свяжется с Вами в ближайшее время</p>
                             <span class="js-close-thanks btn btn-lg btn-sm">Хорошо</span>
                         </div>
                     </div>

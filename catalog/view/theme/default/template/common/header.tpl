@@ -31,7 +31,7 @@
 
     <div id="callModal" class="call-modal mfp-hide">
         <div class="modal-contacts-form">
-            <form action="#" class="js-send-form" data-form-type="modal-call">
+            <form action="#" class="jqs-feedback-form" data-form-type="modal-call">
                 <div class="form-group form-group-icon">
                     <i class="icon icon-inp-user"></i>
                     <input type="text" placeholder="Ваше имя" class="js-name" id="input-name">
@@ -107,6 +107,7 @@
                         <input type="hidden" class="js-hidden-input-product-size" name="products[<?=$cartItem['product_id']; ?>][product_size]">
                         <input type="hidden" class="js-hidden-input-give-some" name="products[<?=$cartItem['product_id']; ?>][give_some]">
                         <input type="hidden" class="js-hidden-input-product-quantity" value="<?=$product_quantity;?>">
+                        <input type="hidden" class="js-total-price-input" name="total_price" value="">
                         <?php foreach($cartItem['option'] as $option) : ?>
                             <?php if($option['option_id'] == 13) : ?>
                                 <input type="hidden" name="products[<?=$cartItem['product_id']; ?>][product_comment]" value="Размер: <?=$option['value']; ?>">
@@ -141,12 +142,12 @@
                         <div class="prod-cart-col t-col-4">
                             <div class="prod-cart-select-wrapp">
                                 <span class="prod-cart-label-select">Количество</span>
-                                <input class="prod-cart-input prod-cart-count" type="text" name="products[<?=$cartItem['product_id']; ?>][product_quantity]" value="<?=$cartItem['quantity'];?>">
+                                <input class="prod-cart-input prod-cart-count js-item-count" type="text" name="products[<?=$cartItem['product_id']; ?>][product_quantity]" value="<?=$cartItem['quantity'];?>">
                             </div>
                         </div>
 
                         <div class="prod-cart-col t-col-5">
-                            <span class="prod-cart-price"><?=$cartItem['total'];?> руб.</span>
+                            <span class="prod-cart-price js-item-price"><?=$cartItem['total'];?> руб.</span>
                         </div>
 
                         <div class="prod-cart-col t-col-6">
@@ -170,7 +171,7 @@
                 </div>
                 <div class="cart-table-summ-value">
                     <span>Итого:</span>
-                    <span class="prod-cart-price total-price"></span>
+                    <span class="prod-cart-price total-price js-total-price"></span>
                 </div>
             </div>
         </div>
@@ -191,7 +192,7 @@
     <div id="thanksModal" class="call-modal mfp-hide">
         <div class="modal-contacts-form">
             <h3>Спасибо!</h3>
-            <p>Наш менеджер сейчас Вам перезвонит</p>
+            <p>Приветливый менеджер свяжется с Вами в ближайшее время</p>
         </div>
     </div>
 
