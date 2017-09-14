@@ -150,6 +150,11 @@ input:active, input:focus {
   flex-direction: column;
 }
 
+.cart-table-del-item,
+.cart-table-del-item > label{
+  cursor: pointer;
+}
+
 
 
 .search-result {

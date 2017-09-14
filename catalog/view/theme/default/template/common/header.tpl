@@ -125,7 +125,7 @@
 
                         <div class="prod-cart-col t-col-3">
                             <div class="prod-cart-select-wrapp">
-                                <span class="prod-cart-label-select">Размер</span>
+                                <span class="prod-cart-label-select jcf-select-size">Размер</span>
                                 <select name="" id="">
                                     <?php foreach($cartItem['options'] as $option) : ?>
                                         <?php if($option['option_id'] == 13) : ?>
@@ -171,7 +171,7 @@
                 </div>
                 <div class="cart-table-summ-value">
                     <span>Итого:</span>
-                    <span class="prod-cart-price total-price js-total-price"></span>
+                    <span class="prod-cart-price total-price js-total-price" data-delivery="false"></span>
                 </div>
             </div>
         </div>

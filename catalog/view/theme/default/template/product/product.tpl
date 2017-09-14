@@ -113,7 +113,7 @@ echo $header;
                         <?php foreach($options as $option):?>
                             <?php if($option['option_id'] == 13): ?>
                                 <?php $j = 1; foreach($option['product_option_value'] as $sizes): ;?>
-                                    <div class="form-group-input-size">
+                                    <div class="form-group-input-size js-btn-buy">
                                         <input class="js-size" type="radio" name="<?=$option['product_option_id']?>" value="<?=$sizes['product_option_value_id']?>" data-size="<?php echo $sizes['name']; ?>" id="mSize<?=$j;?>">
                                         <label class="js-size-label" for="mSize<?=$j;?>"><?php echo($sizes['name']);?></label>
                                     </div>
@@ -122,7 +122,7 @@ echo $header;
                         <?php endforeach;?>
                     </div>
                 </div>
-                <a class="js-btn-buy btn btn-lg btn-max">КУПИТЬ</a>
+                <a class="js-btn-buy btn btn-lg btn-max js-btn-loading">КУПИТЬ</a>
                 <ul class="card-info-service">
                     <li>
                         <i class="icon icon-card"></i>
