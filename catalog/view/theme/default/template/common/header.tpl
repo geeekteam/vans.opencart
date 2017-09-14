@@ -208,9 +208,26 @@
                     <span>10:00 - 21:00</span>
                 </div>
                 <ul class="head-nav">
-                    <?php foreach ($informations as $information) { ?>
-                        <li><a href="<?php echo $information['href']; ?>"><?php echo $information['title']; ?></a></li>
-                    <?php } ?>
+                    <?php if (strpos($_SERVER['REQUEST_URI'], 'about_us')): ?>
+                        <li><a class="active-link">О нас</a></li>
+                    <?php else: ?>
+                        <li><a href="/about_us">О нас</a></li>
+                    <?php endif; ?>
+                    <?php if (strpos($_SERVER['REQUEST_URI'], 'delivery')): ?>
+                        <li><a class="active-link">Доставка</a></li>
+                    <?php else: ?>
+                        <li><a href="/delivery">Доставка</a></li>
+                    <?php endif; ?>
+                    <?php if (strpos($_SERVER['REQUEST_URI'], 'refund')): ?>
+                        <li><a class="active-link">Возврат</a></li>
+                    <?php else: ?>
+                        <li><a href="/refund">Возврат</a></li>
+                    <?php endif; ?>
+                    <?php if (strpos($_SERVER['REQUEST_URI'], 'contacts')): ?>
+                        <li><a class="active-link">Контакты</a></li>
+                    <?php else: ?>
+                        <li><a href="/contacts">Контакты</a></li>
+                    <?php endif; ?>
                 </ul>
 
                 <span class="head-del hidden-devices">Бесплатная доставка при заказе от 3 000 руб. <i>*</i></span>
@@ -250,12 +267,10 @@
                     <svg class="icon h-search">
                         <use xlink:href="/image/svg/sprite_svg.svg#search-icon"></use>
                     </svg>
-                    <form action="/" method="get">
-                        <input type="hidden" name="route" value="product/search">
-                        <input placeholder="Поиск" name="search">
-                        <button type="button"></button>
+                    <form action="#" class="search-inp">
+                        <input type="text" name="search" placeholder="Поиск">
+                        <span class="search-close"></span>
                     </form>
-
                 </div>
                 <div class="head-contacts">
                     <div class="head-phone">
@@ -265,8 +280,23 @@
                         <span class="head-number"><?=$telephone;?></span>
                     </div>
                     <div class="head-order"><a href="#callModal" class="open-modal">Заказать звонок</a></div>
+                    <span class="head-working">Работаем с 2007 года. Более 50 000 довольных клиентов</span>
                 </div>
             </div>
+                <div class="search-result-container">
+                    <div class="search-result">
+                        <div class="search-result-inner">
+                            <div class="template">
+                                <a href="#">
+                                    <div class="search-result-image"><img></div>
+                                    <div class="search-result-name">
+                                        <span></span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
     </header>
     <!-- end header -->

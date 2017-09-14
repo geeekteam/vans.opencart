@@ -72,7 +72,7 @@ echo $header;
             <?php $i = 0; foreach ($breadcrumbs as $breadcrumb): ?>
                 <?php if ($i == 0):?>
                     <li><a href="/">Главная</a></li>
-                    <li><a href="<?php echo $category_href ?>"><?php echo $category ?></a></li>
+                    <li><a href="/all">Каталог</a></li>
                 <?php elseif ($last_elem !== $breadcrumb): ?>
                     <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
                 <?php elseif ($last_elem == $breadcrumb): ?>
@@ -96,13 +96,13 @@ echo $header;
                                 <span class="js-price card-price"><?=str_replace('.00 р.', '', $price); ?> руб.</span>
                             <?php endif; ?>
                             <?php endif; ?>
-                        <?php foreach($options as $option):?>
-                            <?php if($option['option_id'] == 14): ?>
-                                <?php if (!empty(($option['value']))):?>
-                                    <span class="card-discount-price"><?php echo($option['value']);?></span>
-                                <?php endif;?>
-                            <?php endif;?>
-                        <?php endforeach;?>
+                        <?php
+                        $discount_price = intval(str_replace('.00р.', '', (str_replace(' ', '', $special))));
+                        $old_price = intval(str_replace('.00р.', '', (str_replace(' ', '', $price))));
+                        ?>
+                        <?php if($special): ?>
+                            <span class="card-discount-price"><?=intval(100-($discount_price*100)/$old_price);?>%</span>
+                        <?php endif; ?>
                     </div>
                     <span class="card-price-hint">Вы экономите: <?=$economy_sum; ?> РУБ.</span>
                 </div>
@@ -235,13 +235,13 @@ echo $header;
                         <div class="prod-item">
                             <a href="<?=$product['href'];?>">
                                 <div class="prod-img">
-                                    <?php foreach($product['my_options'] as $option):?>
-                                        <?php if($option['option_id'] == 14):?>
-                                            <?php if (!empty(($option['value']))):?>
-                                                <span class="prod-discount"><?=$option['value'];?></span>
-                                            <?php endif;?>
-                                        <?php endif;?>
-                                    <?php endforeach;?>
+                                    <?php
+                                        $discount_price = intval(str_replace('.00р.', '', (str_replace(' ', '', $product['special']))));
+                                        $old_price = intval(str_replace('.00р.', '', (str_replace(' ', '', $product['price']))))
+                                    ?>
+                                    <?php if($product['special']): ?>
+                                        <span class="prod-discount"><?=intval(100-($discount_price*100)/$old_price);?>%</span>
+                                    <?php endif; ?>
                                     <img src="<?=$product['thumb'];?>" alt="">
                                 </div>
                                 <div class="prod-info">

@@ -7,13 +7,13 @@
             <div class="prod-item">
                 <a href="<?=$product['href'];?>">
                     <div class="prod-img">
-                        <?php foreach($product['options'] as $option):?>
-                            <?php if($option['option_id'] == 14): ?>
-                                <?php if (!empty(($option['value']))):?>
-                                    <span class="prod-discount"><?php echo($option['value']);?></span>
-                                <?php endif;?>
-                            <?php endif;?>
-                        <?php endforeach;?>
+                        <?php
+/*                            echo $discount_price = intval(str_replace('.00р.', '', (str_replace(' ', '', $product['special']))));
+                            echo $old_price = intval(str_replace('.00р.', '', (str_replace(' ', '', $product['price']))))
+                        */?>
+                        <?php /*if(isset($product['special'])): */?><!--
+                            <span class="prod-discount"><?/*=intval(100-($discount_price*100)/$old_price);*/?>%</span>
+                        --><?php /*endif; */?>
                         <img src="<?=$product['thumb'];?>" alt="">
                     </div>
                     <div class="prod-info">

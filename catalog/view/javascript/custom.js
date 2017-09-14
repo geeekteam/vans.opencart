@@ -62,6 +62,7 @@ $(function () {
         }
     }
     var $showMore = $('.js-show-more');
+    console.log($showMore);
     if ($showMore.length) {
 
         $showMore.each(function () {
@@ -490,16 +491,49 @@ $('.head-cart-link').on('click', function () {
     totalPrice();
 });
 
-/*function customerValues() {
-    var $form = $('#cartModal'),
-        $customerName = $form.find('#input-name'),
-        $customerPhone = $form.find('#input-phone');
-    $customerName.on('focusout', function () {
-        $(this).value($(this.val()))
-    });
-    $customerPhone.on('focusout', function () {
-        $(this).value($(this.val()))
-    });
-}*/
+$('.search-inp input').on('keydown', function () {
 
-// customerValues();
+    if (!$(this).val()) {
+        $('.search-result').hide();
+        return;
+    }
+
+    var data = {
+        search: $(this).val()
+    };
+    $.ajax({
+        url: 'index.php?route=common/ajax_search',
+        data: data,
+        type: 'post',
+        dataType: 'json',
+        success: function (json) {
+            if (!json.products) {
+                return;
+            }
+
+            var inner = $('.search-result .search-result-inner');
+            var template = $('.search-result .search-result-inner .template').clone();
+            inner.html('');
+
+            inner.append(template);
+
+            json.products.forEach(function (product) {
+                var t = template.clone().removeClass('template');
+                t.find('a').attr('href', product.href);
+                t.find('img').attr('src', product.thumb);
+                t.find('span').html(product.name);
+                inner.append(t);
+            });
+
+            $('.search-result').show();
+
+        }
+    });
+});
+
+//Очистка поиска
+$('.search-close').on("click", function (e) {
+    $(this).siblings('input').val('');
+    $(this).closest('.search-form').removeClass('search-open');
+    $('.search-result').hide();
+});

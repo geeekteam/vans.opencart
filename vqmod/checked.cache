@@ -351,3 +351,15 @@ admin\view\template\catalog\category_form.tpl
 admin\controller\event\compatibility.php
 admin\controller\extension\module\html.php
 admin\view\template\extension\module\html.tpl
+catalog\controller\product\search.php
+catalog\language\en-gb\product\search.php
+catalog\language\ru-ru\product\search.php
+catalog\view\theme\default\template\product\search.tpl
+system\storage\modification\system\engine\action.php
+system\storage\modification\system\engine\loader.php
+system\storage\modification\system\library\config.php
+system\storage\modification\system\library\template\php.php
+system\storage\modification\system\library\language.php
+system\storage\modification\system\library\template\php.php
+catalog\controller\common\ajax_search.php
+catalog\controller\common\ajax_search.php

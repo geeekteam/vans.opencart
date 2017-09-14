@@ -38,19 +38,73 @@ echo $header;
             <div class="aside-column">
                 <div class="aside-nav">
                     <ul class="aside-nav-first">
-                        <li><a href="/vans-old-skool">Кеды Vans Old School</a></li>
-                        <li><a href="/vans-slip-on">Vans Slip-On</a></li>
-                        <li><a href="/vans-authentic">Vans Authentic</a></li>
-                        <li><a href="/vans-era">Vans Era</a></li>
-                        <li><a href="/vans-sk8-hi">Vans SK8-HI</a></li>
+
+                        <?php if (strpos($_SERVER['REQUEST_URI'], 'vans-old-skool')): ?>
+                            <li><a class="active-link">Кеды Vans Old School</a></li>
+                        <?php else: ?>
+                            <li><a href="/vans-old-skool">Кеды Vans Old School</a></li>
+                        <?php endif; ?>
+
+                        <?php if (strpos($_SERVER['REQUEST_URI'], 'vans-slip-on')): ?>
+                            <li><a class="active-link">Vans Slip-On</a></li>
+                        <?php else: ?>
+                            <li><a href="/vans-slip-on">Vans Slip-On</a></li>
+                        <?php endif; ?>
+
+                        <?php if (strpos($_SERVER['REQUEST_URI'], 'vans-authentic')): ?>
+                            <li><a class="active-link">Vans Authentic</a></li>
+                        <?php else: ?>
+                            <li><a href="/vans-authentic">Vans Authentic</a></li>
+                        <?php endif; ?>
+
+                        <?php if (strpos($_SERVER['REQUEST_URI'], 'vans-era')): ?>
+                            <li><a class="active-link">Vans Era</a></li>
+                        <?php else: ?>
+                            <li><a href="/vans-era">Vans Era</a></li>
+                        <?php endif; ?>
+
+                        <?php if (strpos($_SERVER['REQUEST_URI'], 'vans-sk8-hi')): ?>
+                            <li><a class="active-link">Vans SK8-HI</a></li>
+                        <?php else: ?>
+                            <li><a href="/vans-sk8-hi">Vans SK8-HI</a></li>
+                        <?php endif; ?>
                     </ul>
                     <ul class="aside-nav-second">
-                        <li><a href="/vysokie-kedy">Высокие кеды</a></li>
-                        <li><a href="/kedy">Кеды</a></li>
-                        <li><a href="/krossovki">Кроссовки</a></li>
-                        <li><a href="/detskie-kedy">Детские кеды</a></li>
-                        <li><a href="/futbolki">Футболки</a></li>
-                        <li><a href="/golovnye-ubory">Головные уборы</a></li>
+                        <?php if (strpos($_SERVER['REQUEST_URI'], 'vysokie-kedy')): ?>
+                            <li><a class="active-link">Высокие кеды</a></li>
+                        <?php else: ?>
+                            <li><a href="/vysokie-kedy">Высокие кеды</a></li>
+                        <?php endif; ?>
+
+                        <?php if (strpos($_SERVER['REQUEST_URI'], 'kedy')): ?>
+                            <li><a class="active-link">Кеды</a></li>
+                        <?php else: ?>
+                            <li><a href="/kedy">Кеды</a></li>
+                        <?php endif; ?>
+
+                        <?php if (strpos($_SERVER['REQUEST_URI'], 'krossovki')): ?>
+                            <li><a class="active-link">Кроссовки</a></li>
+                        <?php else: ?>
+                            <li><a href="/krossovki">Кроссовки</a></li>
+                        <?php endif; ?>
+
+                        <?php if (strpos($_SERVER['REQUEST_URI'], 'detskie-kedy')): ?>
+                            <li><a class="active-link">Детские кеды</a></li>
+                        <?php else: ?>
+                            <li><a href="/detskie-kedy">Детские кеды</a></li>
+                        <?php endif; ?>
+
+                        <?php if (strpos($_SERVER['REQUEST_URI'], 'futbolki')): ?>
+                            <li><a class="active-link">Футболки</a></li>
+                        <?php else: ?>
+                            <li><a href="/futbolki">Футболки</a></li>
+                        <?php endif; ?>
+
+                        <?php if (strpos($_SERVER['REQUEST_URI'], 'golovnye-ubory')): ?>
+                            <li><a class="active-link">Головные уборы</a></li>
+                        <?php else: ?>
+                            <li><a href="/golovnye-ubory">Головные уборы</a></li>
+                        <?php endif; ?>
                     </ul>
                 </div>
 
@@ -68,15 +122,16 @@ echo $header;
                         $count++; ?>
                             <div class="prod-item-wrapper item" data-category="<?=$heading_title;?>">
                                 <div class="prod-item">
+
                                     <a href="<?=$product['href'];?>">
                                         <div class="prod-img">
-                                            <?php foreach($product['options'] as $option):?>
-                                                <?php if($option['option_id'] == 14):?>
-                                                    <?php if (!empty(($option['value']))):?>
-                                                        <span class="prod-discount"><?=$option['value'];?></span>
-                                                    <?php endif;?>
-                                                <?php endif;?>
-                                            <?php endforeach;?>
+                                            <?php
+                                                $discount_price = intval(str_replace('.00р.', '', (str_replace(' ', '', $product['special']))));
+                                                $old_price = intval(str_replace('.00р.', '', (str_replace(' ', '', $product['price']))))
+                                            ?>
+                                            <?php if($product['special']): ?>
+                                                <span class="prod-discount"><?=intval(100-($discount_price*100)/$old_price);?>%</span>
+                                            <?php endif; ?>
                                             <img src="<?=$product['thumb'];?>" alt="">
                                         </div>
                                         <div class="prod-info">
@@ -110,8 +165,15 @@ echo $header;
             </div>
         </div>
     </div>
+
 </div>
 
-<?=$content_bottom;?>
+<div class="container">
+    <?=$description_bottom; ?>
+</div>
+
+
+
+<?//=$content_bottom;?>
 
 <?php echo $footer; ?>

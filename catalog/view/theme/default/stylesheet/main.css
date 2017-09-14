@@ -700,7 +700,8 @@ a:hover {
   text-decoration: none;
 }
 
-.head-nav li a:hover {
+.head-nav li a:hover,
+.head-nav li a.active-link{
   text-decoration: underline;
 }
 
@@ -911,7 +912,8 @@ a:hover {
   color: #000;
 }
 
-.aside-nav ul a:hover {
+.aside-nav ul a:hover,
+.aside-nav ul a.active-link{
   color: #d51920;
 }
 
@@ -2010,7 +2012,7 @@ a:hover {
     margin-right: 20px;
   }
   .head-search {
-    margin: 23px 0 0 120px;
+    margin: 23px 0 0 60px;
   }
   .search-open form {
     top: -13px;
